@@ -29,5 +29,5 @@ services:
   - type: web
     name: church-frontend
     env: static
-    buildCommand: "cd frontend && npm install && npm run build --configuration=production"
+    buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: ./frontend/dist/church-website

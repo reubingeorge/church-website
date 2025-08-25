@@ -30,4 +30,8 @@ services:
     name: church-frontend
     env: static
     buildCommand: "cd frontend && npm install && npm run build"
-    staticPublishPath: ./frontend/dist/church-website/browser
+    staticPublishPath: ./frontend/dist/church-website
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

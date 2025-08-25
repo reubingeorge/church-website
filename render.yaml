@@ -30,4 +30,4 @@ services:
     name: church-frontend
     env: static
     buildCommand: "cd frontend && npm install && npm run build"
-    staticPublishPath: ./frontend/dist/church-website
+    staticPublishPath: ./frontend/dist/church-website/browser

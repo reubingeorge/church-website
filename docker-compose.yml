@@ -1,0 +1,86 @@
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: church-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: churchpass123
+      MONGO_INITDB_DATABASE: churchdb
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - church-network
+
+  # Redis Cache (for translations)
+  redis:
+    image: redis:7-alpine
+    container_name: church-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - church-network
+
+  # Backend API (Express/Node.js)
+  backend:
+    build: ./backend
+    container_name: church-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      MONGODB_URI: mongodb://admin:churchpass123@mongodb:27017/churchdb?authSource=admin
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: your-super-secret-jwt-key-change-this
+      SESSION_SECRET: your-session-secret-change-this
+      # OAuth credentials (replace with your actual credentials)
+      GOOGLE_CLIENT_ID: your-google-client-id
+      GOOGLE_CLIENT_SECRET: your-google-client-secret
+      MICROSOFT_CLIENT_ID: your-microsoft-client-id
+      MICROSOFT_CLIENT_SECRET: your-microsoft-client-secret
+      # Google Translate API
+      GOOGLE_TRANSLATE_API_KEY: your-google-translate-api-key
+      # Frontend URL for CORS
+      CLIENT_URL: http://localhost:4200
+    depends_on:
+      - mongodb
+      - redis
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - church-network
+
+  # Frontend (Angular)
+  frontend:
+    build: ./frontend
+    container_name: church-frontend
+    restart: unless-stopped
+    ports:
+      - "4200:4200"
+    environment:
+      API_URL: http://localhost:3000
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.angular
+    networks:
+      - church-network
+
+networks:
+  church-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+  redis-data:

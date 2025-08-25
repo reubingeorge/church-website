@@ -1,0 +1,41 @@
+services:
+  # Backend API Service
+  - type: web
+    name: church-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: "cd backend && npm install"
+    startCommand: "cd backend && node server.js"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: MICROSOFT_CLIENT_ID
+        sync: false
+      - key: MICROSOFT_CLIENT_SECRET
+        sync: false
+      - key: PORT
+        value: 10000
+
+  # Frontend Angular Service
+  - type: web
+    name: church-frontend
+    env: static
+    buildCommand: "cd frontend && npm install && npm run build"
+    staticPublishPath: ./frontend/dist/church-frontend/browser
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

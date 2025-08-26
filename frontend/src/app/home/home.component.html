@@ -60,16 +60,11 @@
       <!-- Church Name with stunning animation -->
       <div class="overflow-hidden mb-6">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-extralight text-white mb-4 animate-text-reveal leading-tight drop-shadow-2xl">
-          Mar Gregorios Syrian Orthodox Church
+          {{ translate('header.title') }}
         </h1>
       </div>
       
       <!-- Subtitle with slide animation -->
-      <div class="overflow-hidden mb-8">
-        <p class="text-xl md:text-2xl text-white/90 font-light animate-subtitle-reveal tracking-[0.2em] uppercase drop-shadow-lg">
-          Malayalam Congregation
-        </p>
-      </div>
 
       <!-- Elegant Cross Divider -->
       <div class="flex items-center justify-center mb-8 animate-fade-in-up opacity-0" style="animation-delay: 1.5s; animation-fill-mode: forwards;">
@@ -84,9 +79,9 @@
       <!-- Scripture Quote -->
       <div class="mb-10 animate-fade-in-up opacity-0" style="animation-delay: 1.8s; animation-fill-mode: forwards;">
         <p class="text-lg text-white/80 italic font-light drop-shadow-lg">
-          "Come to me, all who labor and are heavy laden, and I will give you rest"
+          {{ translate('home.heroQuote') }}
         </p>
-        <p class="text-sm text-white/60 mt-2">- Matthew 11:28</p>
+        <p class="text-sm text-white/60 mt-2">- {{translate('home.heroBibleChapter')}} 11:28</p>
       </div>
 
       <!-- Buttons with staggered animation -->
@@ -111,26 +106,26 @@
     <div class="max-w-4xl mx-auto">
       <!-- Section Title -->
       <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4">Our Mission</h2>
+        <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4">{{translate('home.ourMission.header')}}</h2>
         <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent mx-auto"></div>
       </div>
       
       <!-- Scripture Quote -->
       <div class="text-center mb-10">
         <p class="text-lg text-primary-700 italic leading-relaxed mb-2">
-          "And this gospel regarding the kingdom will be preached throughout the whole world, as a testimony to all nations; and then the end will come."
+          "{{ translate('home.ourMission.bibleVerse') }}"
         </p>
-        <p class="text-sm text-primary-600">- Matthew 24:14</p>
+        <p class="text-sm text-primary-600">- {{ translate('home.ourMission.bibleReference') }}</p>
       </div>
       
       <!-- Mission Content -->
       <div class="px-6 md:px-8">
         <p class="text-church-600 leading-relaxed mb-6">
-          Throughout generations, believers have seen the local church as the source that enables them to enlighten their spiritual and mental strength in good times and bad times. It is teaching and preaching, fellowship, and worship, that draws one closer to God. The church is where we provide faith and inspiration to our next generation to keep them as a nation "Under GOD".
+          {{ translate('home.ourMission.firstParagraph') }}
         </p>
         
         <p class="text-church-600 leading-relaxed">
-          It is a community of faith, a home for individuals to express and mature in, and a place for us to renew our relationship with God and with one another. As a congregation of believers, we provide the resources and the atmosphere to enable you to maintain your relationship with God.
+          {{ translate('home.ourMission.secondParagraph') }}
         </p>
       </div>
     </div>
@@ -145,14 +140,14 @@
     <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
       <div class="card-minimal group hover:border-primary-400">
         <div class="w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-4"></div>
-        <h3 class="text-lg font-medium text-church-900 mb-3">Sunday Holy Qurbana</h3>
+        <h3 class="text-lg font-medium text-church-900 mb-3">{{ translate('home.holyQurbana') }}</h3>
         <p class="text-2xl font-light text-primary-600 mb-2">8:30 AM</p>
-        <p class="text-sm text-church-500">Morning Prayer begins at 8:00 AM</p>
+        <p class="text-sm text-church-500">{{ translate('home.morning') }} - 8:00 AM</p>
       </div>
 
       <div class="card-minimal group hover:border-primary-400">
         <div class="w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-4"></div>
-        <h3 class="text-lg font-medium text-church-900 mb-3">Evening Prayer</h3>
+        <h3 class="text-lg font-medium text-church-900 mb-3">{{ translate('home.evening') }}</h3>
         <p class="text-2xl font-light text-primary-600 mb-2">Wednesday 6:30 PM</p>
         <p class="text-sm text-church-500">Followed by Bible Study</p>
       </div>
@@ -166,26 +161,26 @@
     <div class="max-w-4xl mx-auto">
       <!-- Section Title -->
       <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4">Welcome to Our Parish</h2>
+        <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4">{{ translate('home.ourParish.header') }}</h2>
         <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent mx-auto"></div>
       </div>
       
       <!-- Scripture Quote -->
       <div class="text-center mb-10">
         <p class="text-lg text-primary-700 italic leading-relaxed mb-2">
-          "For God so loved the world that he gave his only begotten Son, that whoever believes in him should not perish but have everlasting life."
+          "{{ translate('home.ourParish.bibleVerse') }}"
         </p>
-        <p class="text-sm text-primary-600">- John 3:16</p>
+        <p class="text-sm text-primary-600">- {{ translate('home.ourParish.bibleReference') }}</p>
       </div>
       
       <!-- Welcome Content -->
       <div class="px-6 md:px-8">
         <p class="text-church-600 leading-relaxed mb-6">
-          We are a small community of South Indian Malayalee families of Tampa bay area under the jurisdiction of Malankara Syrian Orthodox Church of North America. Our church opened its door in 1988 under the leadership of Rev. Father George Abraham to provide spiritual services to our community.
+          {{ translate('home.ourParish.firstParagraph') }}
         </p>
         
         <p class="text-church-600 leading-relaxed">
-          We have an open door policy and all are welcome to worship with us, regardless of the religious group or denomination you belong to. Our prayer is for spiritual strength, preaching is for inspiration, worship is to draw one closer to God and our fellowship is to encourage respect, and to love one another.
+          {{ translate('home.ourParish.secondParagraph') }}
         </p>
       </div>
     </div>
@@ -206,7 +201,7 @@
 
       <div class="border-l-2 border-primary-400 pl-4">
         <p class="text-sm text-primary-500 mb-1">January 20</p>
-        <h3 class="text-lg font-medium text-church-900 mb-2">Sunday School Program</h3>
+        <h3 class="text-lg font-medium text-church-900 mb-2">{{ translate('home.sundaySchool') }}</h3>
         <p class="text-sm text-church-600">10:30 AM</p>
       </div>
 
@@ -342,7 +337,7 @@
           </div>
           <div class="flex justify-between">
             <span class="text-church-600">Sunday</span>
-            <span class="text-church-700">After Holy Qurbana</span>
+            <span class="text-church-700">After {{ translate('home.holyQurbana') }}</span>
           </div>
         </div>
 

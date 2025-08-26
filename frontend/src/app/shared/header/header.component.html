@@ -1,35 +1,72 @@
 <header class="bg-white/95 backdrop-blur-sm border-b border-primary-100 sticky top-0 z-50">
-  <nav class="container-narrow">
-    <div class="flex justify-between items-center h-16">
+  <nav class="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <div class="flex justify-between items-center min-h-[5rem] py-4">
       <!-- Logo -->
-      <a routerLink="/" class="flex items-center">
+      <a routerLink="/" class="flex items-center flex-shrink-0">
         <div>
-          <h1 class="text-lg font-medium bg-gradient-to-r from-primary-700 to-primary-900 bg-clip-text text-transparent">Mar Gregorios Syrian Orthodox Church</h1>
-          <p class="text-xs text-primary-500">Malayalam Congregation</p>
+          <h1 [ngClass]="currentLanguage === 'ml' ? 'text-sm sm:text-base lg:text-lg' : 'text-base sm:text-lg lg:text-xl'" 
+              class="font-medium bg-gradient-to-r from-primary-700 to-primary-900 bg-clip-text text-transparent">
+            <span class="block md:hidden">MGSOC</span>
+            <span class="hidden md:block">{{ translate('header.title') }}</span>
+          </h1>
         </div>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden lg:flex items-center" [ngClass]="currentLanguage === 'ml' ? 'gap-4 xl:gap-6' : 'gap-6 xl:gap-8'">
         <a routerLink="/" routerLinkActive="text-primary-700" [routerLinkActiveOptions]="{exact: true}" 
-           class="text-church-600 hover:text-primary-600 text-sm font-medium transition-colors">Home</a>
+           class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
+          {{ translate('header.nav.home') }}
+        </a>
         <a routerLink="/services" routerLinkActive="text-primary-700" 
-           class="text-church-600 hover:text-primary-600 text-sm font-medium transition-colors">Services</a>
+           class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
+          {{ translate('header.nav.services') }}
+        </a>
         <a routerLink="/events" routerLinkActive="text-primary-700" 
-           class="text-church-600 hover:text-primary-600 text-sm font-medium transition-colors">Events</a>
+           class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
+          {{ translate('header.nav.events') }}
+        </a>
         <a routerLink="/sermons" routerLinkActive="text-primary-700" 
-           class="text-church-600 hover:text-primary-600 text-sm font-medium transition-colors">Sermons</a>
+           class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
+          {{ translate('header.nav.sermons') }}
+        </a>
         <a routerLink="/about" routerLinkActive="text-primary-700" 
-           class="text-church-600 hover:text-primary-600 text-sm font-medium transition-colors">About</a>
+           class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
+          {{ translate('header.nav.about') }}
+        </a>
         <a routerLink="/contact" routerLinkActive="text-primary-700" 
-           class="text-church-600 hover:text-primary-600 text-sm font-medium transition-colors">Contact</a>
-        <button routerLink="/login" class="btn-primary text-sm">
-          Sign In
+           class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
+          {{ translate('header.nav.contact') }}
+        </a>
+        
+        <!-- Language Toggle Button -->
+        <button (click)="toggleLanguage()" 
+                class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary-50 to-primary-100 hover:from-primary-100 hover:to-primary-200 border border-primary-300 rounded-full text-sm font-medium text-primary-700 transition-all duration-200 shadow-sm hover:shadow flex-shrink-0">
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+          </svg>
+          <span class="font-medium whitespace-nowrap">{{ currentLanguage === 'en' ? 'ML' : 'EN' }}</span>
+        </button>
+        
+        <button routerLink="/login" class="btn-primary text-sm px-4 py-2">
+          {{ translate('header.nav.signIn') }}
         </button>
       </div>
 
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
+      <!-- Mobile menu button and Language Toggle -->
+      <div class="lg:hidden flex items-center gap-2">
+        <!-- Mobile Language Toggle -->
+        <button (click)="toggleLanguage()" 
+                class="flex items-center gap-1 px-2 py-1 bg-primary-50 hover:bg-primary-100 border border-primary-200 rounded-full text-xs font-medium text-primary-700 transition-colors">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+          </svg>
+          <span>{{ currentLanguage === 'en' ? 'ML' : 'EN' }}</span>
+        </button>
+        
+        <!-- Mobile menu button -->
         <button type="button" (click)="toggleMenu()" class="text-church-600 hover:text-church-900">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -40,23 +77,35 @@
     </div>
 
     <!-- Mobile Navigation -->
-    <div *ngIf="isMenuOpen" class="md:hidden border-t border-church-100">
+    <div *ngIf="isMenuOpen" class="lg:hidden border-t border-church-100">
       <div class="py-4 space-y-1">
         <a routerLink="/" (click)="toggleMenu()" 
-           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">Home</a>
+           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
+          {{ translate('header.nav.home') }}
+        </a>
         <a routerLink="/services" (click)="toggleMenu()" 
-           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">Services</a>
+           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
+          {{ translate('header.nav.services') }}
+        </a>
         <a routerLink="/events" (click)="toggleMenu()" 
-           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">Events</a>
+           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
+          {{ translate('header.nav.events') }}
+        </a>
         <a routerLink="/sermons" (click)="toggleMenu()" 
-           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">Sermons</a>
+           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
+          {{ translate('header.nav.sermons') }}
+        </a>
         <a routerLink="/about" (click)="toggleMenu()" 
-           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">About</a>
+           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
+          {{ translate('header.nav.about') }}
+        </a>
         <a routerLink="/contact" (click)="toggleMenu()" 
-           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">Contact</a>
+           class="block px-4 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
+          {{ translate('header.nav.contact') }}
+        </a>
         <div class="pt-2 px-4">
           <button routerLink="/login" (click)="toggleMenu()" class="btn-primary w-full text-sm">
-            Sign In
+            {{ translate('header.nav.signIn') }}
           </button>
         </div>
       </div>

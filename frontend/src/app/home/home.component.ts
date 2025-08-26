@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
 
 interface HeroImage {
   url: string;
@@ -47,6 +48,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   ];
   
   particles: Particle[] = [];
+  
+  constructor(public translationService: TranslationService) {}
+  
+  translate(key: string): string {
+    return this.translationService.translate(key);
+  }
   
   ngOnInit() {
     // Generate floating particles

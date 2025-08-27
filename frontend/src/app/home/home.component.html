@@ -58,8 +58,8 @@
   <div class="container-narrow relative z-10 text-center">
     <div class="max-w-4xl mx-auto">
       <!-- Church Name with stunning animation -->
-      <div class="overflow-hidden mb-6">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extralight text-white mb-4 animate-text-reveal leading-tight drop-shadow-2xl">
+      <div class="overflow-hidden mb-4 md:mb-6">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extralight text-white mb-2 md:mb-4 animate-text-reveal leading-tight drop-shadow-2xl px-4">
           {{ translate('header.title') }}
         </h1>
       </div>
@@ -67,30 +67,30 @@
       <!-- Subtitle with slide animation -->
 
       <!-- Elegant Cross Divider -->
-      <div class="flex items-center justify-center mb-8 animate-fade-in-up opacity-0" style="animation-delay: 1.5s; animation-fill-mode: forwards;">
+      <div class="flex items-center justify-center mb-4 md:mb-8 animate-fade-in-up opacity-0" style="animation-delay: 1.5s; animation-fill-mode: forwards;">
         <div class="relative">
           <!-- Horizontal line -->
-          <div class="h-px w-24 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+          <div class="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
           <!-- Vertical line -->
-          <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
+          <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-20 md:h-32 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
         </div>
       </div>
 
       <!-- Scripture Quote -->
-      <div class="mb-10 animate-fade-in-up opacity-0" style="animation-delay: 1.8s; animation-fill-mode: forwards;">
-        <p class="text-lg text-white/80 italic font-light drop-shadow-lg">
+      <div class="mb-6 md:mb-10 animate-fade-in-up opacity-0 px-4" style="animation-delay: 1.8s; animation-fill-mode: forwards;">
+        <p class="text-sm sm:text-base md:text-lg text-white/80 italic font-light drop-shadow-lg leading-relaxed">
           {{ translate('home.heroQuote') }}
         </p>
-        <p class="text-sm text-white/60 mt-2">- {{translate('home.heroBibleChapter')}} 11:28</p>
+        <p class="text-xs sm:text-sm text-white/60 mt-2">- {{translate('home.heroBibleChapter')}} </p>
       </div>
 
       <!-- Buttons with staggered animation -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <button class="px-8 py-3 bg-white/90 backdrop-blur-sm text-primary-900 rounded-md hover:bg-white transition-all duration-300 font-medium shadow-2xl transform hover:scale-105 animate-fade-in-up opacity-0" 
+      <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+        <button class="px-6 md:px-8 py-2.5 md:py-3 bg-white/90 backdrop-blur-sm text-primary-900 rounded-md hover:bg-white transition-all duration-300 font-medium text-sm md:text-base shadow-2xl transform hover:scale-105 animate-fade-in-up opacity-0" 
                 style="animation-delay: 2.1s; animation-fill-mode: forwards;">
           Join Us for Worship
         </button>
-        <button class="px-8 py-3 bg-transparent border-2 border-white/70 text-white rounded-md hover:bg-white/10 backdrop-blur-sm transition-all duration-300 font-medium shadow-2xl transform hover:scale-105 animate-fade-in-up opacity-0" 
+        <button class="px-6 md:px-8 py-2.5 md:py-3 bg-transparent border-2 border-white/70 text-white rounded-md hover:bg-white/10 backdrop-blur-sm transition-all duration-300 font-medium text-sm md:text-base shadow-2xl transform hover:scale-105 animate-fade-in-up opacity-0" 
                 style="animation-delay: 2.3s; animation-fill-mode: forwards;">
           Learn More
         </button>
@@ -101,30 +101,30 @@
 </section>
 
 <!-- Our Mission Section -->
-<section class="section-padding bg-gradient-to-b from-white via-primary-50/20 to-white">
-  <div class="container-narrow">
+<section class="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-primary-50/20 to-white">
+  <div class="container px-4 mx-auto">
     <div class="max-w-4xl mx-auto">
       <!-- Section Title -->
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4">{{translate('home.ourMission.header')}}</h2>
-        <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent mx-auto"></div>
+      <div class="text-center mb-6 md:mb-10">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-light text-primary-900 mb-3 md:mb-4">{{translate('home.ourMission.header')}}</h2>
+        <div class="w-12 md:w-16 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent mx-auto"></div>
       </div>
       
       <!-- Scripture Quote -->
-      <div class="text-center mb-10">
-        <p class="text-lg text-primary-700 italic leading-relaxed mb-2">
+      <div class="text-center mb-6 md:mb-10 px-4">
+        <p class="text-sm sm:text-base md:text-lg text-primary-700 italic leading-relaxed mb-2">
           "{{ translate('home.ourMission.bibleVerse') }}"
         </p>
-        <p class="text-sm text-primary-600">- {{ translate('home.ourMission.bibleReference') }}</p>
+        <p class="text-xs sm:text-sm text-primary-600">- {{ translate('home.ourMission.bibleReference') }}</p>
       </div>
       
       <!-- Mission Content -->
-      <div class="px-6 md:px-8">
-        <p class="text-church-600 leading-relaxed mb-6">
+      <div class="px-4 sm:px-6 md:px-8">
+        <p class="text-sm sm:text-base text-church-600 leading-relaxed mb-4 md:mb-6">
           {{ translate('home.ourMission.firstParagraph') }}
         </p>
         
-        <p class="text-church-600 leading-relaxed">
+        <p class="text-sm sm:text-base text-church-600 leading-relaxed">
           {{ translate('home.ourMission.secondParagraph') }}
         </p>
       </div>
@@ -133,53 +133,53 @@
 </section>
 
 <!-- Service Times - Clean Cards -->
-<section id="services" class="section-padding bg-gradient-to-b from-white to-primary-50/30">
-  <div class="container-narrow">
-    <h2 class="text-3xl font-light text-primary-900 text-center mb-12">Service Times</h2>
+<section id="services" class="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-primary-50/30">
+  <div class="container px-4 mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-light text-primary-900 text-center mb-8 md:mb-12">Service Times</h2>
     
-    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-      <div class="card-minimal group hover:border-primary-400">
-        <div class="w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-4"></div>
-        <h3 class="text-lg font-medium text-church-900 mb-3">{{ translate('home.holyQurbana') }}</h3>
-        <p class="text-2xl font-light text-primary-600 mb-2">8:30 AM</p>
-        <p class="text-sm text-church-500">{{ translate('home.morning') }} - 8:00 AM</p>
+    <div class="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
+      <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-primary-400 transition-colors">
+        <div class="w-8 md:w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-3 md:mb-4"></div>
+        <h3 class="text-base md:text-lg font-medium text-church-900 mb-2 md:mb-3">{{ translate('home.holyQurbana') }}</h3>
+        <p class="text-xl md:text-2xl font-light text-primary-600 mb-1 md:mb-2">8:30 AM</p>
+        <p class="text-xs md:text-sm text-church-500">{{ translate('home.morning') }} - 8:00 AM</p>
       </div>
 
-      <div class="card-minimal group hover:border-primary-400">
-        <div class="w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-4"></div>
-        <h3 class="text-lg font-medium text-church-900 mb-3">{{ translate('home.evening') }}</h3>
-        <p class="text-2xl font-light text-primary-600 mb-2">Wednesday 6:30 PM</p>
-        <p class="text-sm text-church-500">Followed by Bible Study</p>
+      <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-primary-400 transition-colors">
+        <div class="w-8 md:w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-3 md:mb-4"></div>
+        <h3 class="text-base md:text-lg font-medium text-church-900 mb-2 md:mb-3">{{ translate('home.evening') }}</h3>
+        <p class="text-xl md:text-2xl font-light text-primary-600 mb-1 md:mb-2">Wednesday 6:30 PM</p>
+        <p class="text-xs md:text-sm text-church-500">Followed by Bible Study</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Welcome to Our Parish Section -->
-<section class="section-padding bg-gradient-to-br from-accent-50/50 via-white to-primary-50/50">
-  <div class="container-narrow">
+<section class="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-accent-50/50 via-white to-primary-50/50">
+  <div class="container px-4 mx-auto">
     <div class="max-w-4xl mx-auto">
       <!-- Section Title -->
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4">{{ translate('home.ourParish.header') }}</h2>
-        <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent mx-auto"></div>
+      <div class="text-center mb-6 md:mb-10">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-light text-primary-900 mb-3 md:mb-4">{{ translate('home.ourParish.header') }}</h2>
+        <div class="w-12 md:w-16 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent mx-auto"></div>
       </div>
       
       <!-- Scripture Quote -->
-      <div class="text-center mb-10">
-        <p class="text-lg text-primary-700 italic leading-relaxed mb-2">
+      <div class="text-center mb-6 md:mb-10 px-4">
+        <p class="text-sm sm:text-base md:text-lg text-primary-700 italic leading-relaxed mb-2">
           "{{ translate('home.ourParish.bibleVerse') }}"
         </p>
-        <p class="text-sm text-primary-600">- {{ translate('home.ourParish.bibleReference') }}</p>
+        <p class="text-xs sm:text-sm text-primary-600">- {{ translate('home.ourParish.bibleReference') }}</p>
       </div>
       
       <!-- Welcome Content -->
-      <div class="px-6 md:px-8">
-        <p class="text-church-600 leading-relaxed mb-6">
+      <div class="px-4 sm:px-6 md:px-8">
+        <p class="text-sm sm:text-base text-church-600 leading-relaxed mb-4 md:mb-6">
           {{ translate('home.ourParish.firstParagraph') }}
         </p>
         
-        <p class="text-church-600 leading-relaxed">
+        <p class="text-sm sm:text-base text-church-600 leading-relaxed">
           {{ translate('home.ourParish.secondParagraph') }}
         </p>
       </div>
@@ -188,32 +188,32 @@
 </section>
 
 <!-- Upcoming Events - Minimal Design -->
-<section id="events" class="section-padding bg-white">
-  <div class="container-narrow">
-    <h2 class="text-3xl font-light text-primary-900 text-center mb-12">Upcoming Events</h2>
+<section id="events" class="py-12 md:py-16 lg:py-20 bg-white">
+  <div class="container px-4 mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-light text-primary-900 text-center mb-8 md:mb-12">Upcoming Events</h2>
     
-    <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-      <div class="border-l-2 border-primary-400 pl-4">
-        <p class="text-sm text-primary-500 mb-1">January 15</p>
-        <h3 class="text-lg font-medium text-church-900 mb-2">Perunnal Celebration</h3>
-        <p class="text-sm text-church-600">8:00 AM - 2:00 PM</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+      <div class="border-l-2 border-primary-400 pl-3 md:pl-4">
+        <p class="text-xs md:text-sm text-primary-500 mb-1">January 15</p>
+        <h3 class="text-base md:text-lg font-medium text-church-900 mb-1 md:mb-2">Perunnal Celebration</h3>
+        <p class="text-xs md:text-sm text-church-600">8:00 AM - 2:00 PM</p>
       </div>
 
-      <div class="border-l-2 border-primary-400 pl-4">
-        <p class="text-sm text-primary-500 mb-1">January 20</p>
-        <h3 class="text-lg font-medium text-church-900 mb-2">{{ translate('home.sundaySchool') }}</h3>
-        <p class="text-sm text-church-600">10:30 AM</p>
+      <div class="border-l-2 border-primary-400 pl-3 md:pl-4">
+        <p class="text-xs md:text-sm text-primary-500 mb-1">January 20</p>
+        <h3 class="text-base md:text-lg font-medium text-church-900 mb-1 md:mb-2">{{ translate('home.sundaySchool') }}</h3>
+        <p class="text-xs md:text-sm text-church-600">10:30 AM</p>
       </div>
 
-      <div class="border-l-2 border-primary-400 pl-4">
-        <p class="text-sm text-primary-500 mb-1">January 27</p>
-        <h3 class="text-lg font-medium text-church-900 mb-2">Parish General Body</h3>
-        <p class="text-sm text-church-600">12:00 PM</p>
+      <div class="border-l-2 border-primary-400 pl-3 md:pl-4">
+        <p class="text-xs md:text-sm text-primary-500 mb-1">January 27</p>
+        <h3 class="text-base md:text-lg font-medium text-church-900 mb-1 md:mb-2">Parish General Body</h3>
+        <p class="text-xs md:text-sm text-church-600">12:00 PM</p>
       </div>
     </div>
 
-    <div class="text-center mt-10">
-      <a href="/events" class="text-primary-600 hover:text-primary-900 font-medium text-sm border-b border-primary-300 pb-1 transition-colors">
+    <div class="text-center mt-6 md:mt-10">
+      <a href="/events" class="text-primary-600 hover:text-primary-900 font-medium text-xs md:text-sm border-b border-primary-300 pb-1 transition-colors">
         View All Events →
       </a>
     </div>
@@ -221,32 +221,32 @@
 </section>
 
 <!-- Announcements - Clean List -->
-<section class="section-padding bg-gradient-to-b from-white to-accent-50/40">
-  <div class="container-narrow">
-    <h2 class="text-3xl font-light text-primary-900 text-center mb-12">Announcements</h2>
+<section class="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-accent-50/40">
+  <div class="container px-4 mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-light text-primary-900 text-center mb-8 md:mb-12">Announcements</h2>
     
-    <div class="max-w-3xl mx-auto space-y-6">
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-1 bg-gradient-to-b from-primary-400 to-primary-600"></div>
+    <div class="max-w-3xl mx-auto space-y-4 md:space-y-6">
+      <div class="flex gap-3 md:gap-4">
+        <div class="flex-shrink-0 w-0.5 md:w-1 bg-gradient-to-b from-primary-400 to-primary-600"></div>
         <div>
-          <h3 class="text-lg font-medium text-church-900 mb-1">Holy Week Services Schedule</h3>
-          <p class="text-church-600 text-sm">Special services throughout Holy Week. Schedule available in the church office.</p>
+          <h3 class="text-base md:text-lg font-medium text-church-900 mb-1">Holy Week Services Schedule</h3>
+          <p class="text-church-600 text-xs md:text-sm">Special services throughout Holy Week. Schedule available in the church office.</p>
         </div>
       </div>
 
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-1 bg-gradient-to-b from-primary-400 to-primary-600"></div>
+      <div class="flex gap-3 md:gap-4">
+        <div class="flex-shrink-0 w-0.5 md:w-1 bg-gradient-to-b from-primary-400 to-primary-600"></div>
         <div>
-          <h3 class="text-lg font-medium text-church-900 mb-1">Building Fund Collection</h3>
-          <p class="text-church-600 text-sm">Special collection this Sunday after Qurbana for maintenance.</p>
+          <h3 class="text-base md:text-lg font-medium text-church-900 mb-1">Building Fund Collection</h3>
+          <p class="text-church-600 text-xs md:text-sm">Special collection this Sunday after Qurbana for maintenance.</p>
         </div>
       </div>
 
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-1 bg-gradient-to-b from-primary-400 to-primary-600"></div>
+      <div class="flex gap-3 md:gap-4">
+        <div class="flex-shrink-0 w-0.5 md:w-1 bg-gradient-to-b from-primary-400 to-primary-600"></div>
         <div>
-          <h3 class="text-lg font-medium text-church-900 mb-1">Youth Group Meeting</h3>
-          <p class="text-church-600 text-sm">MGOCSM meeting Saturday at 5:00 PM. All youth members welcome.</p>
+          <h3 class="text-base md:text-lg font-medium text-church-900 mb-1">Youth Group Meeting</h3>
+          <p class="text-church-600 text-xs md:text-sm">MGOCSM meeting Saturday at 5:00 PM. All youth members welcome.</p>
         </div>
       </div>
     </div>
@@ -254,95 +254,95 @@
 </section>
 
 <!-- Quick Links - Minimal Grid -->
-<section class="section-padding bg-white">
-  <div class="container-narrow">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+<section class="py-12 md:py-16 lg:py-20 bg-white">
+  <div class="container px-4 mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
       <a href="/giving" class="text-center group">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
-          <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
-        <p class="text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Online Giving</p>
+        <p class="text-xs md:text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Online Giving</p>
       </a>
 
       <a href="/prayers" class="text-center group">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
-          <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
           </svg>
         </div>
-        <p class="text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Prayer Requests</p>
+        <p class="text-xs md:text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Prayer Requests</p>
       </a>
 
       <a href="/live" class="text-center group">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
-          <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
           </svg>
         </div>
-        <p class="text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Live Stream</p>
+        <p class="text-xs md:text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Live Stream</p>
       </a>
 
       <a href="/contact" class="text-center group">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
-          <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 group-hover:from-primary-200 group-hover:to-accent-200 transition-all flex items-center justify-center">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
           </svg>
         </div>
-        <p class="text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Contact Us</p>
+        <p class="text-xs md:text-sm font-medium text-church-800 group-hover:text-primary-700 transition-colors">Contact Us</p>
       </a>
     </div>
   </div>
 </section>
 
 <!-- Contact Section - Minimal -->
-<section id="contact" class="section-padding bg-gradient-to-br from-primary-50/30 via-white to-accent-50/30">
-  <div class="container-narrow">
-    <h2 class="text-3xl font-light text-primary-900 text-center mb-12">Visit Us</h2>
+<section id="contact" class="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-primary-50/30 via-white to-accent-50/30">
+  <div class="container px-4 mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-light text-primary-900 text-center mb-8 md:mb-12">Visit Us</h2>
     
-    <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
       <div>
-        <h3 class="text-lg font-medium text-primary-900 mb-6">Contact Information</h3>
+        <h3 class="text-base md:text-lg font-medium text-primary-900 mb-4 md:mb-6">Contact Information</h3>
         
-        <div class="space-y-4">
+        <div class="space-y-3 md:space-y-4">
           <div>
-            <p class="text-sm text-primary-500 mb-1">Address</p>
-            <p class="text-church-700">12001 N 58th St.<br/>Tampa, FL 33617</p>
+            <p class="text-xs md:text-sm text-primary-500 mb-1">Address</p>
+            <p class="text-sm md:text-base text-church-700">12001 N 58th St.<br/>Tampa, FL 33617</p>
           </div>
 
           <div>
-            <p class="text-sm text-primary-500 mb-1">Phone</p>
-            <p class="text-church-700">(555) 123-4567</p>
+            <p class="text-xs md:text-sm text-primary-500 mb-1">Phone</p>
+            <p class="text-sm md:text-base text-church-700">(555) 123-4567</p>
           </div>
 
           <div>
-            <p class="text-sm text-primary-500 mb-1">Email</p>
-            <p class="text-church-700">info&#64;stmarysorthodox.org</p>
+            <p class="text-xs md:text-sm text-primary-500 mb-1">Email</p>
+            <p class="text-sm md:text-base text-church-700">info&#64;stmarysorthodox.org</p>
           </div>
         </div>
       </div>
 
       <div>
-        <h3 class="text-lg font-medium text-primary-900 mb-6">Office Hours</h3>
+        <h3 class="text-base md:text-lg font-medium text-primary-900 mb-4 md:mb-6">Office Hours</h3>
         
         <div class="space-y-2">
-          <div class="flex justify-between">
+          <div class="flex justify-between text-xs md:text-sm">
             <span class="text-church-600">Tuesday - Friday</span>
             <span class="text-church-700">10:00 AM - 4:00 PM</span>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between text-xs md:text-sm">
             <span class="text-church-600">Saturday</span>
             <span class="text-church-700">10:00 AM - 2:00 PM</span>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between text-xs md:text-sm">
             <span class="text-church-600">Sunday</span>
             <span class="text-church-700">After {{ translate('home.holyQurbana') }}</span>
           </div>
         </div>
 
-        <div class="mt-8 p-4 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg border border-primary-200">
-          <p class="text-sm text-church-600">
+        <div class="mt-6 md:mt-8 p-3 md:p-4 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg border border-primary-200">
+          <p class="text-xs md:text-sm text-church-600">
             For urgent pastoral care, please call the church office.
           </p>
         </div>

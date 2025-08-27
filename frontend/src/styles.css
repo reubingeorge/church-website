@@ -24,11 +24,15 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-2.5 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md;
+    @apply px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-all duration-200 font-medium text-xs sm:text-sm shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
-    @apply px-6 py-2.5 bg-transparent border border-primary-300 text-primary-700 rounded-md hover:bg-primary-50 transition-all duration-200 font-medium text-sm;
+    @apply px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-transparent border border-primary-300 text-primary-700 rounded-md hover:bg-primary-50 transition-all duration-200 font-medium text-xs sm:text-sm;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .container-narrow {
@@ -36,11 +40,53 @@
   }
 
   .section-padding {
-    @apply py-20 lg:py-24;
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
   }
 
   .card-minimal {
-    @apply bg-white border border-church-200 rounded-lg p-6 hover:border-primary-300 hover:shadow-sm transition-all duration-200;
+    @apply bg-white border border-church-200 rounded-lg p-4 sm:p-5 md:p-6 hover:border-primary-300 hover:shadow-sm transition-all duration-200;
+  }
+
+  /* Responsive text sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+
+  /* Responsive spacing */
+  .spacing-responsive-sm {
+    @apply p-2 sm:p-3 md:p-4;
+  }
+
+  .spacing-responsive {
+    @apply p-3 sm:p-4 md:p-6;
+  }
+
+  .spacing-responsive-lg {
+    @apply p-4 sm:p-6 md:p-8;
   }
 }
 

@@ -40,9 +40,9 @@ export class TranslationService {
     home: {
       heroQuote: {
         en: 'Come to me, all who labor and are heavy laden, and I will give you rest.',
-        ml: 'സകല കഷ്ടപ്പെട്ടും ഭാരഭാരിതരും ആയിരിക്കുന്നവർ എന്റെ അടുക്കൽ വരുവിൻ; ഞാൻ നിങ്ങളെ വിശ്രമിപ്പിക്കും.'
+        ml: 'അദ്ധ്വാനിക്കുന്നവരും ഭാരം ചുമക്കുന്നവരും ആയുള്ളോരേ, എല്ലാവരും എന്റെ അടുക്കൽ വരുവിൻ; ഞാൻ നിങ്ങളെ ആശ്വസിപ്പിക്കും.'
       },
-      heroBibleChapter: { en: 'Matthew', ml: 'മത്തായി' },
+      heroBibleChapter: { en: 'Matthew 11:28', ml: 'മത്തായി 11:28' },
       serviceTime: {
         en: 'Sunday Service Time',
         ml: 'ഞായറാഴ്ച ശുശ്രൂഷ സമയം'
@@ -55,16 +55,16 @@ export class TranslationService {
         header: { en: 'Our Mission', ml: 'നമ്മുടെ ദൗത്യം' },
         bibleVerse: {
           en: 'And this gospel regarding the kingdom will be preached throughout the whole world, as a testimony to all nations; and then the end will come.',
-          ml: 'രാജ്യത്തിന്റെ സുവിശേഷം ലോകമെങ്ങും സാക്ഷിയായി എല്ലാ ജാതികളോടും പ്രസംഗിക്കപ്പെടും; പിന്നെ അന്ത്യം വരും.'
+          ml: 'രാജ്യത്തിന്റെ ഈ സുവിശേഷം സകലജാതികൾക്കും സാക്ഷ്യമായി ഭൂലോകത്തിൽ ഒക്കെയും പ്രസംഗിക്കപ്പെടും; അപ്പോൾ അവസാനം വരും.'
         },
         bibleReference: { en: 'Matthew 24:14', ml: 'മത്തായി 24:14' },
         firstParagraph: {
           en: 'Throughout generations, believers have seen the local church as the source that enables them to enlighten their spiritual and mental strength in good times and bad times. It is teaching and preaching, fellowship, and worship, that draws one closer to God. The church is where we provide faith and inspiration to our next generation to keep them as a nation "Under GOD".',
-          ml: 'തലമുറകളൊടുക്കി വിശ്വാസികൾ നല്ല കാലങ്ങളിലും കഷ്ടകാലങ്ങളിലും ആത്മീയവും മാനസികവുമായ ശക്തി തെളിയിക്കുന്നതിനായി പ്രാദേശിക സഭയെ മുഖ്യകേന്ദ്രമായി കണ്ടുവരുന്നു. ദൈവത്തിന്റെ വചനബോധനം, പ്രസംഗം, സഹവാസം, ആരാധന—ഇവയിലൂടെ മനുഷ്യൻ ദൈവത്തോടടുത്തുവരുന്നു. സഭയാണ് നമ്മുടെ അടുത്ത തലമുറയ്ക്കു വിശ്വാസവും പ്രചോദനവും നൽകി അവരെ “ദൈവത്തിന്റെ കീഴിൽ” നിലനിർത്തുന്നത്.'
+          ml: 'തലമുറകളായി, വിശ്വാസികൾ പ്രാദേശിക സഭയെ നല്ല കാലത്തും ദുഷ്‌കാലത്തും തങ്ങളുടെ ആത്മീയവും മാനസികവുമായ ശക്തി പ്രകാശിപ്പിക്കാൻ സഹായിക്കുന്ന ഉറവിടമായി കണ്ടിട്ടുണ്ട്. ഉപദേശവും പ്രസംഗവും, കൂട്ടായ്മയും ആരാധനയും - ഇവയാണ് ഒരാളെ ദൈവത്തോട് അടുപ്പിക്കുന്നത്. "ദൈവത്തിൻ കീഴിലുള്ള" ഒരു ജനതയായി നമ്മുടെ അടുത്ത തലമുറയെ നിലനിർത്താൻ വിശ്വാസവും പ്രചോദനവും നൽകുന്നത് സഭയിലാണ്.'
         },
         secondParagraph: {
           en: 'It is a community of faith, a home for individuals to express and mature in, and a place for us to renew our relationship with God and with one another. As a congregation of believers, we provide the resources and the atmosphere to enable you to maintain your relationship with God.',
-          ml: 'ഇതു ഒരു വിശ്വാസ സമൂഹം ആണ്—ഒരാളുടെ ആത്മീയ ജീവിതം പ്രകടിപ്പിക്കാനും വളരാനും സാധിക്കുന്നൊരു ആത്മീയ വീട്. ദൈവത്തോടും സഹജീവികളോടും ഉള്ള ബന്ധം പുതുക്കിക്കൊണ്ടിരിക്കാൻ നമുക്കുള്ള സ്ഥലം. വിശ്വാസികളുടെ സഭയായ നാം, ദൈവത്തോടുള്ള ബന്ധം നിലനിർത്താൻ സഹായിക്കുന്ന അന്തരീക്ഷവും വിഭവങ്ങളും ഒരുക്കുന്നു.'
+          ml: 'ഇത് വിശ്വാസത്തിന്റെ ഒരു സമൂഹമാണ്, വ്യക്തികൾക്ക് തങ്ങളെ പ്രകടിപ്പിക്കാനും പക്വത പ്രാപിക്കാനുമുള്ള ഒരു ഭവനമാണ്, ദൈവത്തോടും പരസ്പരവുമുള്ള നമ്മുടെ ബന്ധം പുതുക്കാനുള്ള ഒരു സ്ഥലമാണ്. വിശ്വാസികളുടെ ഒരു സഭ എന്ന നിലയിൽ, ദൈവത്തോടുള്ള നിങ്ങളുടെ ബന്ധം നിലനിർത്താൻ സഹായിക്കുന്ന വിഭവങ്ങളും അന്തരീക്ഷവും ഞങ്ങൾ നൽകുന്നു.'
         }
 
       },
@@ -72,16 +72,16 @@ export class TranslationService {
         header: { en: 'Welcome to Our Parish', ml: 'നമ്മുടെ ദേവാലയത്തിലേക്ക് സ്വാഗതം' },
         bibleVerse: {
           en: 'For God so loved the world that he gave his only begotten Son, that whoever believes in him should not perish but have everlasting life.',
-          ml: 'ദൈവം ലോകത്തെ ഇങ്ങനെ സ്നേഹിച്ചു; അവന്റെ ഏകജാതനായ പുത്രനെ തന്നു; അവനിൽ വിശ്വസിക്കുന്നവൻ ഒരുവനും നശിച്ചുപോകാതെ നിത്യജീവൻ പ്രാപിക്കേണ്ടതിന്നു.'
+          ml: 'തന്റെ ഏകജാതനായ പുത്രനിൽ വിശ്വസിക്കുന്ന ഏവനും നശിച്ചുപോകാതെ നിത്യജീവൻ പ്രാപിക്കേണ്ടതിന്നു ദൈവം അവനെ നല്കുവാൻ തക്കവണ്ണം ലോകത്തെ സ്നേഹിച്ചു.'
         },
         bibleReference: { en: 'John 3:16', ml: 'യോഹന്നാൻ 3:16' },
         firstParagraph: {
           en: 'We are a small community of South Indian Malayalee families of Tampa bay area under the jurisdiction of Malankara Syrian Orthodox Church of North America. Our church opened its door in 1988 under the leadership of Rev. Father George Abraham to provide spiritual services to our community.',
-          ml: 'ഞങ്ങൾ ടാമ്പാ ബേയിലെ മലയാളി കുടുംബങ്ങളുടെ ഒരു ചെറിയ ക്രൈസ്തവ സമൂഹമാണ്. 1988-ൽ സ്ഥാപിതമായ ഞങ്ങളുടെ സഭ, മലങ്കര സിറിയൻ ഓർത്തഡോക്സ് സഭയുടെ കീഴിൽ ആത്മീയ സേവനങ്ങൾ നൽകിവരുന്നു.'
+          ml: 'ഞങ്ങൾ വടക്കേ അമേരിക്കയിലെ മലങ്കര സുറിയാനി ഓർത്തഡോക്സ് സഭയുടെ അധികാരപരിധിയിൽ വരുന്ന ടാമ്പാ ബേ പ്രദേശത്തെ ദക്ഷിണേന്ത്യൻ മലയാളി കുടുംബങ്ങളുടെ ഒരു ചെറിയ സമൂഹമാണ്. ഞങ്ങളുടെ സമുദായത്തിന് ആത്മീയ ശുശ്രൂഷകൾ നൽകുന്നതിനായി 1988-ൽ റവ. ഫാദർ ജോർജ് എബ്രഹാമിന്റെ നേതൃത്വത്തിൽ ഞങ്ങളുടെ പള്ളി അതിന്റെ വാതിലുകൾ തുറന്നു.'
         },
         secondParagraph: {
           en: 'We have an open door policy and all are welcome to worship with us, regardless of the religious group or denomination you belong to. Our prayer is for spiritual strength, preaching is for inspiration, worship is to draw one closer to God and our fellowship is to encourage respect, and to love one another.',
-          ml: 'ഞങ്ങളുടെ വാതിൽ എല്ലാവർക്കും തുറന്നിരിക്കുന്നു — ഏത് മതവിഭാഗക്കാരായാലും ആരാധനയ്ക്ക് സ്വാഗതം. പ്രാർത്ഥന ശക്തിക്കായി, പ്രസംഗം പ്രചോദനത്തിനായി, ആരാധന ദൈവസാന്നിധ്യത്തിനായി, സഹവാസം സ്നേഹത്തിനും ബഹുമാനത്തിനുമായി.'
+          ml: 'ഞങ്ങൾക്ക് തുറന്ന വാതിൽ നയമുണ്ട്, നിങ്ങൾ ഏത് മതവിഭാഗത്തിലോ സഭാവിഭാഗത്തിലോ പെട്ടവരായാലും എല്ലാവരെയും ഞങ്ങളോടൊപ്പം ആരാധിക്കാൻ സ്വാഗതം ചെയ്യുന്നു. ഞങ്ങളുടെ പ്രാർത്ഥന ആത്മീയ ശക്തിക്കുവേണ്ടിയാണ്, പ്രസംഗം പ്രചോദനത്തിനാണ്, ആരാധന ഒരാളെ ദൈവത്തോട് അടുപ്പിക്കാനാണ്, ഞങ്ങളുടെ കൂട്ടായ്മ പരസ്പര ബഹുമാനം പ്രോത്സാഹിപ്പിക്കാനും അന്യോന്യം സ്നേഹിക്കാനുമാണ്.'
         }
         
       }

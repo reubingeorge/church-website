@@ -44,13 +44,18 @@ export class TranslationService {
       },
       heroBibleChapter: { en: 'Matthew 11:28', ml: 'മത്തായി 11:28' },
       serviceTime: {
-        en: 'Sunday Service Time',
-        ml: 'ഞായറാഴ്ച ശുശ്രൂഷ സമയം'
+        en: 'Service Time',
+        ml: 'ആരാധന സമയം'
       },
       morning: { en: 'Morning Prayer', ml: 'പ്രഭാത പ്രാർത്ഥന' },
       evening: { en: 'Evening Prayer', ml: 'സായാഹ്ന പ്രാർത്ഥന' },
       holyQurbana: { en: 'Holy Qurbana', ml: 'വിശുദ്ധ കുർബാന' },
       sundaySchool: { en: 'Sunday School', ml: 'ഞായറാഴ്ച സ്കൂൾ' },
+      sundaySchoolSub: { en: 'After Sunday Service', ml: 'ഞായറാഴ്ച ശുശ്രൂഷയ്ക്കു ശേഷം' },
+      upcomingEvents: { en: 'Upcoming Events', ml: 'വരാനിരിക്കുന്ന ശുശ്രൂഷകളും പരിപാടികളും' },
+      visitUs: { en: 'Visit Us', ml: 'ഞങ്ങളെ സന്ദർശിക്കുക' },
+      contactInfo: { en: 'Contact Information', ml: 'ബന്ധപ്പെടുന്നതിനുള്ള വിവരങ്ങൾ' },
+      address:{ en: 'Address', ml: 'വിലാസം' },
       ourMission: {
         header: { en: 'Our Mission', ml: 'നമ്മുടെ ദൗത്യം' },
         bibleVerse: {
@@ -60,11 +65,11 @@ export class TranslationService {
         bibleReference: { en: 'Matthew 24:14', ml: 'മത്തായി 24:14' },
         firstParagraph: {
           en: 'Throughout generations, believers have seen the local church as the source that enables them to enlighten their spiritual and mental strength in good times and bad times. It is teaching and preaching, fellowship, and worship, that draws one closer to God. The church is where we provide faith and inspiration to our next generation to keep them as a nation "Under GOD".',
-          ml: 'തലമുറകളായി, വിശ്വാസികൾ പ്രാദേശിക സഭയെ നല്ല കാലത്തും ദുഷ്‌കാലത്തും തങ്ങളുടെ ആത്മീയവും മാനസികവുമായ ശക്തി പ്രകാശിപ്പിക്കാൻ സഹായിക്കുന്ന ഉറവിടമായി കണ്ടിട്ടുണ്ട്. ഉപദേശവും പ്രസംഗവും, കൂട്ടായ്മയും ആരാധനയും - ഇവയാണ് ഒരാളെ ദൈവത്തോട് അടുപ്പിക്കുന്നത്. "ദൈവത്തിൻ കീഴിലുള്ള" ഒരു ജനതയായി നമ്മുടെ അടുത്ത തലമുറയെ നിലനിർത്താൻ വിശ്വാസവും പ്രചോദനവും നൽകുന്നത് സഭയിലാണ്.'
+          ml: 'തലമുറകളായി വിശ്വാസികൾ പ്രാദേശിക സഭയെ നല്ല കാലത്തും ദുഷ്‌കാലത്തും തങ്ങളുടെ ആത്മീയവും മാനസികവുമായ ശക്തി പ്രകാശിപ്പിക്കാൻ സഹായിക്കുന്ന ഉറവിടമായി കണ്ടുവരുന്നു. ഉപദേശവും പ്രസംഗവും, കൂട്ടായ്മയും ആരാധനയും - ഇവയാണ് നമ്മെ ദൈവത്തോട് അടുപ്പിക്കുന്നത്. അടുത്ത തലമുറയെ "ദൈവത്തിൻ കീഴിലുള്ള" ഒരു ജനതയായി നിലനിർത്താൻ വിശ്വാസവും പ്രചോദനവും നൽകുന്നത് സഭയിലൂടെയാണ്.'
         },
         secondParagraph: {
           en: 'It is a community of faith, a home for individuals to express and mature in, and a place for us to renew our relationship with God and with one another. As a congregation of believers, we provide the resources and the atmosphere to enable you to maintain your relationship with God.',
-          ml: 'ഇത് വിശ്വാസത്തിന്റെ ഒരു സമൂഹമാണ്, വ്യക്തികൾക്ക് തങ്ങളെ പ്രകടിപ്പിക്കാനും പക്വത പ്രാപിക്കാനുമുള്ള ഒരു ഭവനമാണ്, ദൈവത്തോടും പരസ്പരവുമുള്ള നമ്മുടെ ബന്ധം പുതുക്കാനുള്ള ഒരു സ്ഥലമാണ്. വിശ്വാസികളുടെ ഒരു സഭ എന്ന നിലയിൽ, ദൈവത്തോടുള്ള നിങ്ങളുടെ ബന്ധം നിലനിർത്താൻ സഹായിക്കുന്ന വിഭവങ്ങളും അന്തരീക്ഷവും ഞങ്ങൾ നൽകുന്നു.'
+          ml: 'ഇത് ഒരു വിശ്വാസ സമൂഹമാണ്, വ്യക്തികൾക്ക് തങ്ങളെ പ്രകടിപ്പിക്കാനും ആത്മീയമായി വളരാനുമുള്ള ഗൃഹവും, ദൈവത്തോടും പരസ്പരവുമുള്ള നമ്മുടെ ബന്ധം പുതുക്കാനുള്ള സ്ഥലവുമാണ്. വിശ്വാസികളുടെ സഭയെന്ന നിലയിൽ, ദൈവവുമായുള്ള നിങ്ങളുടെ ബന്ധം നിലനിർത്താൻ ആവശ്യമായ സൗകര്യങ്ങളും അനുകൂലമായ അന്തരീക്ഷവും ഞങ്ങൾ ഒരുക്കുന്നു.'
         }
 
       },
@@ -77,11 +82,11 @@ export class TranslationService {
         bibleReference: { en: 'John 3:16', ml: 'യോഹന്നാൻ 3:16' },
         firstParagraph: {
           en: 'We are a small community of South Indian Malayalee families of Tampa bay area under the jurisdiction of Malankara Syrian Orthodox Church of North America. Our church opened its door in 1988 under the leadership of Rev. Father George Abraham to provide spiritual services to our community.',
-          ml: 'ഞങ്ങൾ വടക്കേ അമേരിക്കയിലെ മലങ്കര സുറിയാനി ഓർത്തഡോക്സ് സഭയുടെ അധികാരപരിധിയിൽ വരുന്ന ടാമ്പാ ബേ പ്രദേശത്തെ ദക്ഷിണേന്ത്യൻ മലയാളി കുടുംബങ്ങളുടെ ഒരു ചെറിയ സമൂഹമാണ്. ഞങ്ങളുടെ സമുദായത്തിന് ആത്മീയ ശുശ്രൂഷകൾ നൽകുന്നതിനായി 1988-ൽ റവ. ഫാദർ ജോർജ് എബ്രഹാമിന്റെ നേതൃത്വത്തിൽ ഞങ്ങളുടെ പള്ളി അതിന്റെ വാതിലുകൾ തുറന്നു.'
+          ml: 'ഞങ്ങൾ വടക്കേ അമേരിക്കയിലെ മലങ്കര സുറിയാനി ഓർത്തഡോക്സ് സഭയുടെ അധികാരപരിധിയിൽ വരുന്ന, ടാമ്പാ ബേ പ്രദേശത്തെ ദക്ഷിണേന്ത്യൻ മലയാളി കുടുംബങ്ങളുടെ ഒരു ചെറിയ സമൂഹമാണ്. 1988-ൽ റവ. ഫാദർ ജോർജ് എബ്രഹാമിന്റെ നേതൃത്വത്തിൽ ഞങ്ങളുടെ സമുദായത്തിന് ആത്മീയ ശുശ്രൂഷകൾ നൽകുന്നതിനായി നമ്മുടെ സഭ അതിന്റെ വാതിലുകൾ തുറന്നു.'
         },
         secondParagraph: {
           en: 'We have an open door policy and all are welcome to worship with us, regardless of the religious group or denomination you belong to. Our prayer is for spiritual strength, preaching is for inspiration, worship is to draw one closer to God and our fellowship is to encourage respect, and to love one another.',
-          ml: 'ഞങ്ങൾക്ക് തുറന്ന വാതിൽ നയമുണ്ട്, നിങ്ങൾ ഏത് മതവിഭാഗത്തിലോ സഭാവിഭാഗത്തിലോ പെട്ടവരായാലും എല്ലാവരെയും ഞങ്ങളോടൊപ്പം ആരാധിക്കാൻ സ്വാഗതം ചെയ്യുന്നു. ഞങ്ങളുടെ പ്രാർത്ഥന ആത്മീയ ശക്തിക്കുവേണ്ടിയാണ്, പ്രസംഗം പ്രചോദനത്തിനാണ്, ആരാധന ഒരാളെ ദൈവത്തോട് അടുപ്പിക്കാനാണ്, ഞങ്ങളുടെ കൂട്ടായ്മ പരസ്പര ബഹുമാനം പ്രോത്സാഹിപ്പിക്കാനും അന്യോന്യം സ്നേഹിക്കാനുമാണ്.'
+          ml: 'ഞങ്ങൾക്ക് തുറന്ന വാതിൽ നയമാണുള്ളത്, നിങ്ങൾ ഏത് മതവിഭാഗത്തിലോ സഭാവിഭാഗത്തിലോ പെട്ടവരായാലും ഞങ്ങളോടൊപ്പം ആരാധിക്കാൻ എല്ലാവർക്കും സ്വാഗതം. ആത്മീയ ശക്തിക്കായാണ് ഞങ്ങളുടെ പ്രാർത്ഥന, പ്രചോദനത്തിനായാണ് പ്രസംഗം, ദൈവത്തോട് അടുപ്പിക്കാനാണ് ആരാധന, പരസ്പര ബഹുമാനം വളർത്താനും അന്യോന്യം സ്നേഹിക്കാനുമാണ് നമ്മുടെ കൂട്ടായ്മ.'
         }
         
       }

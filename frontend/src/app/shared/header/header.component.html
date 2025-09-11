@@ -35,6 +35,10 @@
            class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
           {{ translate('header.nav.about') }}
         </a>
+        <a routerLink="/vicar" routerLinkActive="text-primary-700" 
+           class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
+          Our Vicar
+        </a>
         <a routerLink="/contact" routerLinkActive="text-primary-700" 
            class="text-sm lg:text-base text-church-600 hover:text-primary-600 font-medium transition-colors whitespace-nowrap">
           {{ translate('header.nav.contact') }}
@@ -99,6 +103,10 @@
         <a routerLink="/about" (click)="toggleMenu()" 
            class="block px-3 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
           {{ translate('header.nav.about') }}
+        </a>
+        <a routerLink="/vicar" (click)="toggleMenu()" 
+           class="block px-3 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">
+          Our Vicar
         </a>
         <a routerLink="/contact" (click)="toggleMenu()" 
            class="block px-3 py-2 text-sm font-medium text-church-600 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors">

@@ -1,0 +1,296 @@
+<!-- Hero Section -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-900/90 via-primary-800/80 to-primary-900/95"></div>
+  </div>
+
+  <!-- Animated light rays -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 left-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-white/60 to-transparent animate-shimmer-slow blur-sm"></div>
+    <div class="absolute top-0 left-1/2 w-0.5 h-full bg-gradient-to-b from-transparent via-white/60 to-transparent animate-shimmer-slow blur-sm" style="animation-delay: 1s"></div>
+    <div class="absolute top-0 right-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-white/60 to-transparent animate-shimmer-slow blur-sm" style="animation-delay: 2s"></div>
+  </div>
+
+  <div class="container-narrow relative z-10 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extralight text-white mb-4 animate-text-reveal leading-tight drop-shadow-2xl">
+        Rev. Fr. George Abraham
+      </h1>
+      
+      <div class="flex items-center justify-center mb-4 animate-fade-in-up" style="animation-delay: 0.5s">
+        <div class="relative">
+          <div class="h-px w-24 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+          <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-20 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
+        </div>
+      </div>
+
+      <p class="text-lg text-white/80 animate-fade-in-up" style="animation-delay: 0.7s">
+        "Our George Achen" • Vicar since 1988
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content Section -->
+<section class="py-16 md:py-20 bg-gradient-to-b from-white via-primary-50/20 to-white">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Image Gallery and Content Grid -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+        
+        <!-- Left: Image Gallery -->
+        <div class="relative" [class.animate-fade-in-up]="showContent">
+          <div class="sticky top-24">
+            <!-- Main Image -->
+            <div class="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mb-4">
+              <div *ngFor="let image of vicarImages; let i = index"
+                   class="absolute inset-0 transition-opacity duration-700"
+                   [class.opacity-100]="selectedImage === i"
+                   [class.opacity-0]="selectedImage !== i">
+                <img [src]="image.url" 
+                     [alt]="image.alt" 
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                  <p class="text-white text-lg font-light">{{ image.caption }}</p>
+                </div>
+              </div>
+              
+              <!-- Navigation -->
+              <button (click)="prevImage()" 
+                      class="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-lg">
+                <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button (click)="nextImage()" 
+                      class="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-lg">
+                <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+            
+            <!-- Thumbnail dots -->
+            <div class="flex justify-center gap-2">
+              <button *ngFor="let image of vicarImages; let i = index"
+                      (click)="selectImage(i)"
+                      class="w-2 h-2 rounded-full transition-all duration-300"
+                      [class.w-8]="selectedImage === i"
+                      [class.bg-primary-600]="selectedImage === i"
+                      [class.bg-gray-300]="selectedImage !== i">
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right: Toggle Content -->
+        <div [class.animate-fade-in-up]="showContent" style="animation-delay: 0.2s">
+          
+          <!-- Toggle Buttons -->
+          <div class="flex bg-white rounded-lg border border-church-200 p-1 mb-6">
+            <button (click)="setActiveTab('story')"
+                    class="flex-1 py-3 px-4 rounded-md font-medium transition-all duration-300"
+                    [class.bg-gradient-to-r]="activeTab === 'story'"
+                    [class.from-primary-500]="activeTab === 'story'"
+                    [class.to-accent-400]="activeTab === 'story'"
+                    [class.text-white]="activeTab === 'story'"
+                    [class.text-church-600]="activeTab !== 'story'">
+              {{ selectedLanguage === 'ml' ? 'ജീവിത കഥ' : 'Life Story' }}
+            </button>
+            <button (click)="setActiveTab('journey')"
+                    class="flex-1 py-3 px-4 rounded-md font-medium transition-all duration-300"
+                    [class.bg-gradient-to-r]="activeTab === 'journey'"
+                    [class.from-primary-500]="activeTab === 'journey'"
+                    [class.to-accent-400]="activeTab === 'journey'"
+                    [class.text-white]="activeTab === 'journey'"
+                    [class.text-church-600]="activeTab !== 'journey'">
+              {{ selectedLanguage === 'ml' ? 'സേവന യാത്ര' : 'Journey of Service' }}
+            </button>
+          </div>
+          
+          <!-- Life Story Content -->
+          <div *ngIf="activeTab === 'story'" 
+               class="bg-white rounded-lg border border-church-200 p-6 md:p-8 shadow-sm animate-fade-in">
+            <h2 class="text-2xl font-light text-primary-900 mb-4">Early Life & Calling</h2>
+            <div class="w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-6"></div>
+            
+            <div class="space-y-4 text-church-600 leading-relaxed">
+              <p>
+                Georgekutty Abraham was born as the fourth child of Philipose and Annamma Abraham Kalimkoottil, Pampady. In his early age, he took his grandfather as his role model, a predominant member and a well respected elder of St. Simon Syrian Orthodox Church (Karikkamattam).
+              </p>
+              <p>
+                His grandfather's prayer life and dedication to the church activities encouraged him to be a devoted Christian from his childhood. His first venture into the service of our Lord was as an altar boy at his local church.
+              </p>
+              
+              <h3 class="text-xl font-medium text-primary-800 mt-6 mb-3">Journey to Ministry</h3>
+              <p>
+                As he came to America in 1978, he had the opportunity to live with H.E. Yoohannan Mar Philexinios for a few years. Under his teachings and guidance, Georgekutty decided to dedicate his life for God's ministry.
+              </p>
+              <p>
+                He was ordained as deacon on September 14, 1981 by the supreme head of the universal Syrian Orthodox Church, His Holiness Moran Mor Ignatius Zakka I Iwas. After completing his B.Th. from Logos Bible College, New York, he was ordained priest by H.E. Geevarghese Mar Gregorios on December 8, 1984.
+              </p>
+              
+              <h3 class="text-xl font-medium text-primary-800 mt-6 mb-3">Service in Tampa</h3>
+              <p>
+                He served as Vicar of the Staten Island Church, New York from 1984 to 1988. He came to Tampa, Florida in 1988 and established Mar Gregorios Syrian Orthodox Church and has been the Vicar ever since.
+              </p>
+              <p class="italic text-primary-700 font-medium mt-4">
+                "His prayer life and commitment to the community has given him a nickname 'Our George Achen'."
+              </p>
+            </div>
+          </div>
+          
+          <!-- Journey Timeline -->
+          <div *ngIf="activeTab === 'journey'" 
+               class="animate-fade-in">
+            <div class="relative">
+              <!-- Timeline Line -->
+              <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200 opacity-30"></div>
+              <!-- Animated line that draws from top to bottom -->
+              <div class="absolute left-4 top-0 w-0.5 bg-gradient-to-b from-primary-400 via-primary-600 to-primary-400 timeline-line-draw"></div>
+              
+              <!-- Timeline Items -->
+              <div *ngFor="let milestone of milestones; let i = index" 
+                   class="timeline-item relative flex items-start mb-8 ml-4"
+                   [class.timeline-visible]="showContent"
+                   [style.--delay]="i * 150 + 'ms'">
+                
+                <!-- Dot -->
+                <div class="timeline-dot absolute left-[-0.5rem] w-4 h-4 bg-white border-2 border-primary-500 rounded-full mt-1">
+                  <div class="absolute inset-0 bg-primary-500 rounded-full scale-0 timeline-dot-fill"></div>
+                </div>
+                
+                <!-- Content -->
+                <div class="ml-8 bg-white rounded-lg border border-church-200 p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div class="text-lg font-light text-primary-600 mb-1">{{ milestone.year }}</div>
+                  <h3 class="text-base font-medium text-church-900 mb-2">{{ milestone.title }}</h3>
+                  <p class="text-sm text-church-600">{{ milestone.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Quote Section -->
+<section class="py-16 md:py-20 bg-gradient-to-br from-accent-50/50 via-white to-primary-50/50">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="mb-8">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
+          <span class="text-3xl">✝</span>
+        </div>
+        <p class="text-xl md:text-2xl font-light italic mb-6 text-primary-800">
+          "A spiritual father who has dedicated over 35 years to nurturing and guiding our community in faith"
+        </p>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+      
+      <p class="text-base text-church-600 mb-8">
+        From his early days as an altar boy to becoming the founding vicar of our church, Fr. George Abraham's journey has been one of unwavering faith and dedicated service.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button routerLink="/contact" 
+                class="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-md hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-medium shadow-lg">
+          {{ selectedLanguage === 'ml' ? 'ബന്ധപ്പെടുക' : 'Contact Church Office' }}
+        </button>
+        <button routerLink="/about" 
+                class="px-6 py-3 bg-white border-2 border-primary-300 text-primary-700 rounded-md hover:bg-primary-50 transition-all duration-300 font-medium">
+          {{ selectedLanguage === 'ml' ? 'ചർച്ചിനെക്കുറിച്ച്' : 'About Our Church' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS for animations -->
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Timeline line drawing animation */
+  .timeline-line-draw {
+    height: 0;
+    animation: drawLineDown 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes drawLineDown {
+    to {
+      height: 100%;
+    }
+  }
+  
+  /* Timeline items staggered reveal */
+  .timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .timeline-item.timeline-visible {
+    animation: subtleReveal 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  @keyframes subtleReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Timeline dot animation */
+  .timeline-dot {
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  .timeline-visible .timeline-dot {
+    animation: dotReveal 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: calc(var(--delay, 0ms) + 200ms);
+  }
+
+  @keyframes dotReveal {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .timeline-visible .timeline-dot-fill {
+    animation: fillDot 0.3s ease-out forwards;
+    animation-delay: calc(var(--delay, 0ms) + 400ms);
+  }
+
+  @keyframes fillDot {
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Hover effect for timeline cards */
+  .timeline-item:hover .ml-8 {
+    transform: translateX(4px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.12);
+    border-color: rgb(165, 180, 252);
+  }
+</style>

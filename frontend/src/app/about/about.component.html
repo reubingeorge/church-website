@@ -1,0 +1,332 @@
+<!-- Hero Section with Parallax Effect -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+  <!-- Background with Church Image -->
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-900/90 via-primary-800/80 to-primary-900/95"></div>
+  </div>
+
+  <!-- Animated light rays -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 left-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-white/60 to-transparent animate-shimmer-slow blur-sm"></div>
+    <div class="absolute top-0 left-1/2 w-0.5 h-full bg-gradient-to-b from-transparent via-white/60 to-transparent animate-shimmer-slow blur-sm" style="animation-delay: 1s"></div>
+    <div class="absolute top-0 right-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-white/60 to-transparent animate-shimmer-slow blur-sm" style="animation-delay: 2s"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="container-narrow relative z-10 text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="overflow-hidden mb-6">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-white mb-4 animate-text-reveal leading-tight drop-shadow-2xl">
+          {{ selectedLanguage === 'ml' ? 'ഞങ്ങളെക്കുറിച്ച്' : 'About Us' }}
+        </h1>
+      </div>
+      
+      <!-- Elegant Cross Divider -->
+      <div class="flex items-center justify-center mb-6 animate-fade-in-up" style="animation-delay: 0.8s">
+        <div class="relative">
+          <div class="h-px w-24 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+          <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
+        </div>
+      </div>
+
+      <p class="text-lg md:text-xl text-white/80 font-light animate-subtitle-reveal">
+        {{ selectedLanguage === 'ml' ? 
+          'മാർ ഗ്രിഗോറിയോസ് സീറിയൻ ഓർത്തഡോക്സ് ചർച്ച്' : 
+          'Mar Gregorios Syrian Orthodox Church' }}
+      </p>
+      <p class="text-base text-white/70 mt-2 animate-fade-in-up" style="animation-delay: 1s">
+        Established 1988 • Tampa, Florida
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Timeline Section with Scroll Animations -->
+<section class="py-16 md:py-20 bg-gradient-to-b from-white via-primary-50/20 to-white overflow-hidden">
+  <div class="container px-4 mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4" 
+          [class.timeline-visible]="showContent">
+        {{ selectedLanguage === 'ml' ? 'ഞങ്ങളുടെ യാത്ര' : 'Our Journey' }}
+      </h2>
+      <div class="w-16 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"
+           [class.timeline-visible]="showContent"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto relative">
+      <!-- Professional Timeline Line -->
+      <div class="absolute left-8 md:left-1/2 transform -translate-x-px md:-translate-x-px w-0.5 h-full">
+        <!-- Static gradient line background -->
+        <div class="absolute inset-0 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200 opacity-30"></div>
+        
+        <!-- Animated line that draws from top to bottom -->
+        <div class="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary-400 via-primary-600 to-primary-400 timeline-line-draw"></div>
+      </div>
+      
+      <!-- Timeline Items with Professional Scroll Reveal -->
+      <div *ngFor="let item of timeline; let i = index" 
+           class="timeline-item relative flex items-center mb-8 md:mb-12"
+           [class.md:justify-start]="i % 2 === 0"
+           [class.md:justify-end]="i % 2 !== 0"
+           [class.timeline-visible]="showContent"
+           [style.--delay]="i * 150 + 'ms'">
+        
+        <!-- Professional Content Card -->
+        <div class="timeline-card ml-20 md:ml-0 md:w-5/12 bg-white rounded-lg p-6 border border-church-200 shadow-sm relative overflow-hidden"
+             [class.md:text-right]="i % 2 === 0"
+             [class.md:text-left]="i % 2 !== 0"
+             [class.md:mr-auto]="i % 2 === 0"
+             [class.md:ml-auto]="i % 2 !== 0">
+          
+          <!-- Subtle gradient accent with yellow theme -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 to-accent-400 transform origin-left scale-x-0 timeline-accent"></div>
+          
+          <div class="relative">
+            <div class="text-2xl font-light text-primary-600 mb-2">{{ item.year }}</div>
+            <h3 class="text-lg font-medium text-church-900 mb-2">{{ item.title }}</h3>
+            <p class="text-sm text-church-600 leading-relaxed">{{ item.description }}</p>
+          </div>
+        </div>
+        
+        <!-- Professional Timeline Dot -->
+        <div class="timeline-dot absolute left-[1.5rem] md:left-[calc(50%-0.5rem)] w-4 h-4 bg-white border-2 border-primary-500 rounded-full z-10">
+          <div class="absolute inset-0 bg-primary-500 rounded-full scale-0 timeline-dot-fill"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Five Altars Section with Accent Theme -->
+<section class="py-16 md:py-20 bg-gradient-to-br from-accent-50/50 via-white to-primary-50/50">
+  <div class="container px-4 mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4"
+          [class.timeline-visible]="showContent">
+        {{ selectedLanguage === 'ml' ? 'ഞങ്ങളുടെ അഞ്ച് അൾത്താരകൾ' : 'Our Five Altars' }}
+      </h2>
+      <div class="w-16 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"
+           [class.timeline-visible]="showContent"></div>
+      <p class="text-base text-church-600 mt-6 max-w-3xl mx-auto"
+         [class.timeline-visible]="showContent">
+        In 2004, our church was built with five altars as envisioned by Rev. Fr. George Abraham, each dedicated to significant figures in our faith:
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div *ngFor="let altar of altars; let i = index" 
+           class="altar-card bg-white p-6 rounded-lg border border-church-200 transition-all duration-300"
+           [class.lg:col-span-3]="i === 0"
+           [class.lg:mx-auto]="i === 0"
+           [class.lg:max-w-md]="i === 0"
+           [class.timeline-visible]="showContent"
+           [style.--delay]="(i * 100 + 200) + 'ms'">
+        <div class="text-primary-600 mb-3 flex justify-center">
+          <!-- Use simple religious symbols with better clarity -->
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
+            <span *ngIf="i === 0" class="text-2xl font-bold">✝</span>
+            <span *ngIf="i === 1" class="text-2xl">👑</span>
+            <span *ngIf="i === 2" class="text-2xl">⚔️</span>
+            <span *ngIf="i === 3" class="text-2xl">📖</span>
+            <span *ngIf="i === 4" class="text-2xl">⛪</span>
+          </div>
+        </div>
+        <h3 class="text-lg font-medium text-church-900 mb-2 text-center">{{ altar.dedication }}</h3>
+        <p class="text-sm text-church-600 text-center italic mb-2">{{ altar.name }}</p>
+        <p class="text-sm text-church-500 text-center">{{ altar.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values Section with Accent -->
+<section class="py-16 md:py-20 bg-gradient-to-b from-white to-accent-50/40">
+  <div class="container px-4 mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light text-primary-900 mb-4">
+        {{ selectedLanguage === 'ml' ? 'ഞങ്ങളുടെ മൂല്യങ്ങൾ' : 'Our Core Values' }}
+      </h2>
+      <div class="w-16 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div *ngFor="let value of values; let i = index" 
+           class="bg-white p-6 rounded-lg border border-church-200 hover:border-primary-300 hover:shadow-md transition-all duration-300"
+           [style.animation-delay]="i * 100 + 'ms'"
+           [class.animate-fade-in-up]="showContent">
+        <div class="text-3xl mb-4 text-primary-600">{{ value.icon }}</div>
+        <h3 class="text-lg font-medium text-church-900 mb-3">{{ value.title }}</h3>
+        <p class="text-sm text-church-600 leading-relaxed">{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join Our Community CTA -->
+<section class="py-16 md:py-20 bg-gradient-to-b from-primary-900 to-primary-800">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-3xl mx-auto text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-light mb-6">
+        {{ selectedLanguage === 'ml' ? 'ഞങ്ങളോടൊപ്പം ചേരൂ' : 'Join Our Community' }}
+      </h2>
+      <p class="text-lg mb-8 text-white/80">
+        {{ selectedLanguage === 'ml' ? 
+          'വിശ്വാസത്തിലും സ്നേഹത്തിലും സേവനത്തിലും വേരൂന്നിയ ഒരു സമൂഹത്തിന്റെ ഭാഗമാകൂ' :
+          'Become part of a community rooted in faith, love, and service' }}
+      </p>
+      
+      <!-- Scripture Quote -->
+      <div class="mb-10">
+        <p class="text-base italic text-white/70 mb-2">
+          "For where two or three are gathered in my name, there am I among them."
+        </p>
+        <p class="text-sm text-white/60">- Matthew 18:20</p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button routerLink="/services" 
+                class="px-8 py-3 bg-white/90 backdrop-blur-sm text-primary-900 rounded-md hover:bg-white transition-all duration-300 font-medium shadow-lg transform hover:scale-105">
+          {{ selectedLanguage === 'ml' ? 'ഞങ്ങളുടെ സേവനങ്ങൾ' : 'View Our Services' }}
+        </button>
+        <button routerLink="/contact" 
+                class="px-8 py-3 bg-transparent border-2 border-white/70 text-white rounded-md hover:bg-white/10 backdrop-blur-sm transition-all duration-300 font-medium">
+          {{ selectedLanguage === 'ml' ? 'ബന്ധപ്പെടുക' : 'Contact Us' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional CSS for Scroll-Triggered Animations -->
+<style>
+  /* Professional scroll-reveal animation system */
+  .timeline-visible {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealElement 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  @keyframes revealElement {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Professional timeline line animation */
+  .timeline-line-draw {
+    height: 0;
+    animation: drawLineDown 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes drawLineDown {
+    to {
+      height: 100%;
+    }
+  }
+
+  /* Timeline item professional reveal */
+  .timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .timeline-item.timeline-visible {
+    animation: subtleReveal 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  @keyframes subtleReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Timeline card professional hover effect */
+  .timeline-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+    border-color: rgb(165, 180, 252);
+  }
+
+  .timeline-card:hover .timeline-accent {
+    transform: scaleX(1);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Timeline dot professional animation */
+  .timeline-dot {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .timeline-visible .timeline-dot {
+    animation: dotReveal 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: calc(var(--delay, 0ms) + 200ms);
+  }
+
+  @keyframes dotReveal {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .timeline-visible .timeline-dot-fill {
+    animation: fillDot 0.3s ease-out forwards;
+    animation-delay: calc(var(--delay, 0ms) + 400ms);
+  }
+
+  @keyframes fillDot {
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Altar cards professional animation */
+  .altar-card {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .altar-card.timeline-visible {
+    animation: cardReveal 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: var(--delay, 200ms);
+  }
+
+  @keyframes cardReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .altar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.12);
+    border-color: rgb(165, 180, 252);
+  }
+
+  /* Accessibility - respect user preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Mobile optimization */
+  @media (max-width: 768px) {
+    .timeline-item {
+      animation-delay: calc(var(--delay, 0ms) * 0.5);
+    }
+  }
+</style>

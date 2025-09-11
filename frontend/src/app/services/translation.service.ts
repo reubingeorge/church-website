@@ -34,7 +34,8 @@ export class TranslationService {
         sermons: { en: 'Sermons', ml: 'പ്രസംഗങ്ങൾ' },
         about: { en: 'About', ml: 'ഞങ്ങളെക്കുറിച്ച്' },
         contact: { en: 'Contact', ml: 'ബന്ധപ്പെടുക' },
-        signIn: { en: 'Sign In', ml: 'സൈൻ ഇൻ' }
+        signIn: { en: 'Sign In', ml: 'സൈൻ ഇൻ' },
+        ourVicar: { en: 'Our Vicar', ml: 'നമ്മുടെ അച്ചൻ'}
       }
     },
     home: {
@@ -89,6 +90,72 @@ export class TranslationService {
           ml: 'ഞങ്ങൾക്ക് തുറന്ന വാതിൽ നയമാണുള്ളത്, നിങ്ങൾ ഏത് മതവിഭാഗത്തിലോ സഭാവിഭാഗത്തിലോ പെട്ടവരായാലും ഞങ്ങളോടൊപ്പം ആരാധിക്കാൻ എല്ലാവർക്കും സ്വാഗതം. ആത്മീയ ശക്തിക്കായാണ് ഞങ്ങളുടെ പ്രാർത്ഥന, പ്രചോദനത്തിനായാണ് പ്രസംഗം, ദൈവത്തോട് അടുപ്പിക്കാനാണ് ആരാധന, പരസ്പര ബഹുമാനം വളർത്താനും അന്യോന്യം സ്നേഹിക്കാനുമാണ് നമ്മുടെ കൂട്ടായ്മ.'
         }
         
+      }
+    },
+    about:{
+      heroQuote: {
+        en: 'Established 1988 • Tampa, Florida',
+        ml: '1988-ൽ സ്ഥാപിതം • ടാമ്പ, ഫ്ലോറിഡ'
+      },
+      ourJourney: {
+        first:{
+          title: { en: 'Church Foundation', ml: 'പള്ളി സ്ഥാപനം' },
+          description:{
+            en: 'Rev. Fr. George Abraham relocated from Staten Island, NY to Tampa and organized our church. First services began at Orange River Estate clubhouse in Temple Terrace', 
+            ml: 'റവ. ഫാ. ജോർജ് എബ്രഹാം സ്റ്റാറ്റൻ ഐലൻഡ്, ന്യൂയോർക്കിൽ നിന്ന് ടാമ്പയിലേക്ക് താമസം മാറ്റി നമ്മുടെ പള്ളി സംഘടിപ്പിച്ചു. ടെമ്പിൾ ടെറസിലെ ഓറഞ്ച് റിവർ എസ്റ്റേറ്റ് ക്ലബ്ബ്ഹൗസിൽ ആദ്യ ശുശ്രൂഷകൾ ആരംഭിച്ചു'}
+        },
+        second:{
+          title: { en: 'Incorporation', ml: 'സംഘടന രജിസ്ട്രേഷൻ' },
+          description:{
+            en: 'Incorporated as Mar Gregorios Syrian Orthodox Church, dedicated to Mor Gregorios of Parumala with affiliation to the Syrian Orthodox Church of North America',
+            ml: 'മാർ ഗ്രിഗോറിയോസ് സുറിയാനി ഓർത്തഡോക്സ് പള്ളി എന്ന പേരിൽ രജിസ്റ്റർ ചെയ്തു. പരുമല തിരുമേനിക്ക് സമർപ്പിതം. നോർത്ത് അമേരിക്കൻ സുറിയാനി ഓർത്തഡോക്സ് സഭയുമായി അഫിലിയേഷൻ'}
+        },
+        third:{
+          title: { en: 'First Property', ml: 'ആദ്യ സ്ഥലം' },
+          description:{
+            en: 'February 7 - Purchased a small house and two acres of land, converting the house into a beautiful chapel for regular Sunday services',
+            ml: 'ഫെബ്രുവരി 7 - ഒരു ചെറിയ വീടും രണ്ട് ഏക്കർ സ്ഥലവും വാങ്ങി. വീട് മനോഹരമായ ഒരു ചാപ്പലാക്കി മാറ്റി എല്ലാ ഞായറാഴ്ചയും കുർബാന നടത്തി'}
+        },
+        fourth:{
+          title: { en: 'New Church Building', ml: 'പുതിയ പള്ളി' },
+          description:{
+            en: 'Built the church with five altars as envisioned by Rev. Fr. George Abraham, providing adequate space for our growing congregation', 
+            ml: 'റവ. ഫാ. ജോർജ് എബ്രഹാമിന്റെ സങ്കൽപ്പത്തിൽ അഞ്ച് മദ്ബഹകളോടെ പള്ളി പണിതു. വളരുന്ന നമ്മുടെ സമൂഹത്തിന് മതിയായ സ്ഥലം ഒരുക്കി'}
+        },
+        fifth:{
+          year: {en: 'Present', ml: 'ഇന്ന്'},
+          title: { en: 'Continued Growth', ml: 'തുടർച്ചയായ വളർച്ച' },
+          description:{
+            en: 'Serving the Malayalam Syrian Orthodox community in Tampa Bay with dedication and faith', 
+            ml: 'ടാമ്പാ ബേയിലെ മലയാളി സുറിയാനി ഓർത്തഡോക്സ് സമൂഹത്തെ സമർപ്പണത്തോടും വിശ്വാസത്തോടും കൂടി സേവിക്കുന്നു'}
+        }
+      },
+      altars: {
+        first: {
+          name: { en: 'Main Altar', ml: 'പ്രധാന മദ്ബഹ' },
+          dedication: { en: 'Mor Gregorios of Malankara', ml: 'മലങ്കര ഗ്രിഗോറിയോസ് തിരുമേനി' },
+          description: { en: 'Our primary altar for divine liturgy', ml: 'നമ്മുടെ പ്രധാന മദ്ബഹ, വിശുദ്ധ കുർബാനയ്ക്കായി' }
+        },
+        second: {
+          name: { en: 'Second Altar', ml: 'രണ്ടാം മദ്ബഹ' },
+          dedication: { en: 'St. Mary', ml: 'പരിശുദ്ധ മറിയം' },
+          description: { en: 'Dedicated to the Mother of our Lord', ml: 'നമ്മുടെ കർത്താവിന്റെ മാതാവിന് സമർപ്പിതം' }
+        },
+        third: {
+          name: { en: 'Third Altar', ml: 'മൂന്നാം മദ്ബഹ' },
+          dedication: { en: 'St. George', ml: 'വിശുദ്ധ ഗീവർഗ്ഗീസ്' },
+          description: { en: 'Honoring the Martyr', ml: 'സഹദയെ ബഹുമാനിക്കുന്നു' }
+        },
+        fourth: {
+          name: { en: 'Fourth Altar', ml: 'നാലാം മദ്ബഹ' },
+          dedication: { en: 'Patriarch St. Ignatius Elias III', ml: 'പാത്രിയർക്കീസ് മാർ ഇഗ്നാത്തിയോസ് ഏലിയാസ് മൂന്നാമൻ' },
+          description: { en: 'Named after the Patriarch', ml: 'ബാവയുടെ നാമത്തിൽ' }
+        },
+        fifth: {
+          name: { en: 'Fifth Altar', ml: 'അഞ്ചാം മദ്ബഹ' },
+          dedication: { en: 'St. Basalios Eldo', ml: 'എൽദോ ബാവ' },
+          description: { en: 'Dedicated to the Saint', ml: 'പുണ്യവാനു സമർപ്പിതം' }
+        }
       }
     },
     common: {

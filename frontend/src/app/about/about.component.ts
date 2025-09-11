@@ -13,22 +13,10 @@ export class AboutComponent implements OnInit {
   scrollY = 0;
   showContent = false;
   selectedLanguage = 'en';
+  saintTab: 'life' | 'ministry' | 'legacy' = 'life';
   
-  timeline = [
-    { year: '1988', title: 'Church Foundation', description: 'Rev. Fr. George Abraham relocated from Staten Island, NY to Tampa and organized our church. First services began at Orange River Estate clubhouse in Temple Terrace' },
-    { year: '1988', title: 'Incorporation', description: 'Incorporated as Mar Gregorios Syrian Orthodox Church, dedicated to Mor Gregorios of Parumala with affiliation to the Syrian Orthodox Church of North America' },
-    { year: '1991', title: 'First Property', description: 'February 7 - Purchased a small house and two acres of land, converting the house into a beautiful chapel for regular Sunday services' },
-    { year: '2004', title: 'New Church Building', description: 'Built the church with five altars as envisioned by Rev. Fr. George Abraham, providing adequate space for our growing congregation' },
-    { year: 'Present', title: 'Continued Growth', description: 'Serving the Malayalam Syrian Orthodox community in Tampa Bay with dedication and faith' }
-  ];
-
-  altars = [
-    { name: 'Main Altar', dedication: 'Mor Gregorios of Malankara', description: 'Our primary altar for divine liturgy' },
-    { name: 'Second Altar', dedication: 'St. Mary', description: 'Dedicated to the Mother of our Lord' },
-    { name: 'Third Altar', dedication: 'St. George', description: 'Honoring the Martyr' },
-    { name: 'Fourth Altar', dedication: 'Patriarch St. Ignatius Elias III', description: 'Named after the Patriarch' },
-    { name: 'Fifth Altar', dedication: 'St. Basalios Eldo', description: 'Dedicated to the Saint' }
-  ];
+  timeline: any[] = [];
+  altars: any[] = [];
 
   values = [
     {
@@ -60,6 +48,35 @@ export class AboutComponent implements OnInit {
       this.showContent = true;
     }, 100);
     this.selectedLanguage = this.translationService.getLanguage();
+    this.updateTimeline();
+    this.updateAltars();
+    
+    // Subscribe to language changes
+    this.translationService.language$.subscribe(lang => {
+      this.selectedLanguage = lang;
+      this.updateTimeline();
+      this.updateAltars();
+    });
+  }
+
+  updateTimeline() {
+    this.timeline = [
+      { year: '1988', title: this.translate('about.ourJourney.first.title'), description: this.translate('about.ourJourney.first.description') },
+      { year: '1988', title: this.translate('about.ourJourney.second.title'), description: this.translate('about.ourJourney.second.description')},
+      { year: '1991', title: this.translate('about.ourJourney.third.title'), description: this.translate('about.ourJourney.third.description') },
+      { year: '2004', title: this.translate('about.ourJourney.fourth.title'), description: this.translate('about.ourJourney.fourth.description') },
+      { year: this.translate('about.ourJourney.fifth.year'), title: this.translate('about.ourJourney.fifth.title'), description: this.translate('about.ourJourney.fifth.description') }
+    ];
+  }
+
+  updateAltars() {
+    this.altars = [
+      { name: this.translate('about.altars.first.name'), dedication: this.translate('about.altars.first.dedication'), description: this.translate('about.altars.first.description') },
+      { name: this.translate('about.altars.second.name'), dedication: this.translate('about.altars.second.dedication'), description: this.translate('about.altars.second.description') },
+      { name: this.translate('about.altars.third.name'), dedication: this.translate('about.altars.third.dedication'), description: this.translate('about.altars.third.description') },
+      { name: this.translate('about.altars.fourth.name'), dedication: this.translate('about.altars.fourth.dedication'), description: this.translate('about.altars.fourth.description') },
+      { name: this.translate('about.altars.fifth.name'), dedication: this.translate('about.altars.fifth.dedication'), description: this.translate('about.altars.fifth.description') }
+    ];
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -69,5 +86,13 @@ export class AboutComponent implements OnInit {
 
   getParallaxOffset(speed: number): string {
     return `translateY(${this.scrollY * speed}px)`;
+  }
+
+  setSaintTab(tab: 'life' | 'ministry' | 'legacy') {
+    this.saintTab = tab;
+  }
+
+  translate(key: string): string {
+    return this.translationService.translate(key);
   }
 }

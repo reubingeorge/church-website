@@ -13,7 +13,8 @@
 
   <div class="container-narrow relative z-10 text-center">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extralight text-white mb-4 animate-text-reveal leading-tight drop-shadow-2xl">
+      <h1 [ngClass]="selectedLanguage === 'ml' ? 'text-3xl sm:text-4xl md:text-5xl' : 'text-4xl sm:text-5xl md:text-6xl'" 
+          class="font-extralight text-white mb-4 animate-text-reveal leading-tight drop-shadow-2xl">
         Rev. Fr. George Abraham
       </h1>
       
@@ -24,7 +25,7 @@
         </div>
       </div>
 
-      <p class="text-lg text-white/80 animate-fade-in-up" style="animation-delay: 0.7s">
+      <p [ngClass]="getTextClass('lg')" class="text-white/80 animate-fade-in-up" style="animation-delay: 0.7s">
         "Our George Achen" • Vicar since 1988
       </p>
     </div>
@@ -52,7 +53,7 @@
                      [alt]="image.alt" 
                      class="w-full h-full object-cover">
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                  <p class="text-white text-lg font-light">{{ image.caption }}</p>
+                  <p class="text-white font-light" [ngClass]="getTextClass('lg')">{{ image.caption }}</p>
                 </div>
               </div>
               
@@ -90,53 +91,43 @@
           <!-- Toggle Buttons -->
           <div class="flex bg-white rounded-lg border border-church-200 p-1 mb-6">
             <button (click)="setActiveTab('story')"
-                    class="flex-1 py-3 px-4 rounded-md font-medium transition-all duration-300"
+                    [ngClass]="getButtonClass()" class="flex-1 rounded-md font-medium transition-all duration-300"
                     [class.bg-gradient-to-r]="activeTab === 'story'"
                     [class.from-primary-500]="activeTab === 'story'"
                     [class.to-accent-400]="activeTab === 'story'"
                     [class.text-white]="activeTab === 'story'"
                     [class.text-church-600]="activeTab !== 'story'">
-              {{ selectedLanguage === 'ml' ? 'ജീവിത കഥ' : 'Life Story' }}
+                    {{ translate('vicar.lifeStory.mainTitle') }}
             </button>
             <button (click)="setActiveTab('journey')"
-                    class="flex-1 py-3 px-4 rounded-md font-medium transition-all duration-300"
+                    [ngClass]="getButtonClass()" class="flex-1 rounded-md font-medium transition-all duration-300"
                     [class.bg-gradient-to-r]="activeTab === 'journey'"
                     [class.from-primary-500]="activeTab === 'journey'"
                     [class.to-accent-400]="activeTab === 'journey'"
                     [class.text-white]="activeTab === 'journey'"
                     [class.text-church-600]="activeTab !== 'journey'">
-              {{ selectedLanguage === 'ml' ? 'സേവന യാത്ര' : 'Journey of Service' }}
+                    {{ translate('vicar.milestones.mainTitle') }}
             </button>
           </div>
           
           <!-- Life Story Content -->
           <div *ngIf="activeTab === 'story'" 
                class="bg-white rounded-lg border border-church-200 p-6 md:p-8 shadow-sm animate-fade-in">
-            <h2 class="text-2xl font-light text-primary-900 mb-4">Early Life & Calling</h2>
+            <h2 [ngClass]="getHeadingClass('lg')" class="font-light text-primary-900 mb-4">{{ translate('vicar.lifeStory.header1') }}</h2>
             <div class="w-12 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mb-6"></div>
             
-            <div class="space-y-4 text-church-600 leading-relaxed">
-              <p>
-                Georgekutty Abraham was born as the fourth child of Philipose and Annamma Abraham Kalimkoottil, Pampady. In his early age, he took his grandfather as his role model, a predominant member and a well respected elder of St. Simon Syrian Orthodox Church (Karikkamattam).
-              </p>
-              <p>
-                His grandfather's prayer life and dedication to the church activities encouraged him to be a devoted Christian from his childhood. His first venture into the service of our Lord was as an altar boy at his local church.
-              </p>
+            <div class="space-y-4 text-church-600 leading-relaxed" [ngClass]="getTextClass('base')">
+              <p>{{ translate('vicar.lifeStory.description1.firstParagraph') }}</p>
+              <p>{{ translate('vicar.lifeStory.description1.secondParagraph') }}</p>
               
-              <h3 class="text-xl font-medium text-primary-800 mt-6 mb-3">Journey to Ministry</h3>
-              <p>
-                As he came to America in 1978, he had the opportunity to live with H.E. Yoohannan Mar Philexinios for a few years. Under his teachings and guidance, Georgekutty decided to dedicate his life for God's ministry.
-              </p>
-              <p>
-                He was ordained as deacon on September 14, 1981 by the supreme head of the universal Syrian Orthodox Church, His Holiness Moran Mor Ignatius Zakka I Iwas. After completing his B.Th. from Logos Bible College, New York, he was ordained priest by H.E. Geevarghese Mar Gregorios on December 8, 1984.
-              </p>
+              <h3 [ngClass]="getHeadingClass('sm')" class="font-medium text-primary-800 mt-6 mb-3">{{ translate('vicar.lifeStory.header2') }}</h3>
+              <p>{{ translate('vicar.lifeStory.description2.firstParagraph') }}</p>
+              <p>{{ translate('vicar.lifeStory.description2.secondParagraph') }}</p>
               
-              <h3 class="text-xl font-medium text-primary-800 mt-6 mb-3">Service in Tampa</h3>
-              <p>
-                He served as Vicar of the Staten Island Church, New York from 1984 to 1988. He came to Tampa, Florida in 1988 and established Mar Gregorios Syrian Orthodox Church and has been the Vicar ever since.
-              </p>
+              <h3 [ngClass]="getHeadingClass('sm')" class="font-medium text-primary-800 mt-6 mb-3">{{ translate('vicar.lifeStory.header3') }}</h3>
+              <p>{{ translate('vicar.lifeStory.description3.firstParagraph') }}</p>
               <p class="italic text-primary-700 font-medium mt-4">
-                "His prayer life and commitment to the community has given him a nickname 'Our George Achen'."
+                "{{ translate('vicar.lifeStory.description3.secondParagraph') }}"
               </p>
             </div>
           </div>
@@ -163,9 +154,9 @@
                 
                 <!-- Content -->
                 <div class="ml-8 bg-white rounded-lg border border-church-200 p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <div class="text-lg font-light text-primary-600 mb-1">{{ milestone.year }}</div>
-                  <h3 class="text-base font-medium text-church-900 mb-2">{{ milestone.title }}</h3>
-                  <p class="text-sm text-church-600">{{ milestone.description }}</p>
+                  <div [ngClass]="getTextClass('lg')" class="font-light text-primary-600 mb-1">{{ milestone.year }}</div>
+                  <h3 [ngClass]="getTextClass('base')" class="font-medium text-church-900 mb-2">{{ milestone.title }}</h3>
+                  <p [ngClass]="getTextClass('sm')" class="text-church-600">{{ milestone.description }}</p>
                 </div>
               </div>
             </div>
@@ -186,23 +177,23 @@
         <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
           <span class="text-3xl">✝</span>
         </div>
-        <p class="text-xl md:text-2xl font-light italic mb-6 text-primary-800">
-          "A spiritual father who has dedicated over 35 years to nurturing and guiding our community in faith"
+        <p [ngClass]="getHeadingClass('md')" class="font-light italic mb-6 text-primary-800">
+          "{{ translate('vicar.bottomQuote.quote') }}"
         </p>
         <div class="w-16 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
       </div>
       
-      <p class="text-base text-church-600 mb-8">
-        From his early days as an altar boy to becoming the founding vicar of our church, Fr. George Abraham's journey has been one of unwavering faith and dedicated service.
-      </p>
+      <p [ngClass]="getTextClass('base')" class="text-church-600 mb-8">{{ translate('vicar.bottomQuote.description') }}</p>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <button routerLink="/contact" 
-                class="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-md hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-medium shadow-lg">
+                [ngClass]="selectedLanguage === 'ml' ? 'px-5 py-2 text-sm' : 'px-6 py-3 text-base'"
+                class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-md hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-medium shadow-lg">
           {{ selectedLanguage === 'ml' ? 'ബന്ധപ്പെടുക' : 'Contact Church Office' }}
         </button>
         <button routerLink="/about" 
-                class="px-6 py-3 bg-white border-2 border-primary-300 text-primary-700 rounded-md hover:bg-primary-50 transition-all duration-300 font-medium">
+                [ngClass]="selectedLanguage === 'ml' ? 'px-5 py-2 text-sm' : 'px-6 py-3 text-base'"
+                class="bg-white border-2 border-primary-300 text-primary-700 rounded-md hover:bg-primary-50 transition-all duration-300 font-medium">
           {{ selectedLanguage === 'ml' ? 'ചർച്ചിനെക്കുറിച്ച്' : 'About Our Church' }}
         </button>
       </div>

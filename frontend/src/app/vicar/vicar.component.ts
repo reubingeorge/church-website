@@ -44,38 +44,7 @@ export class VicarComponent implements OnInit {
     }
   ];
 
-  milestones = [
-    { 
-      year: '1978', 
-      title: 'Journey to America',
-      description: 'Came to America and lived with H.E. Yoohannan Mar Philexinios, beginning his spiritual journey'
-    },
-    { 
-      year: '1981', 
-      title: 'Ordained as Deacon',
-      description: 'September 14 - Ordained by His Holiness Moran Mor Ignatius Zakka I Iwas'
-    },
-    { 
-      year: '1984', 
-      title: 'Ordained as Priest',
-      description: 'December 8 - Ordained by H.E. Geevarghese Mar Gregorios after completing B.Th. from Logos Bible College'
-    },
-    { 
-      year: '1984-1988', 
-      title: 'Vicar of Staten Island',
-      description: 'Served as Vicar of the Syrian Orthodox Church in Staten Island, New York'
-    },
-    { 
-      year: '1988', 
-      title: 'Founded Tampa Church',
-      description: 'Established Mar Gregorios Syrian Orthodox Church in Tampa, Florida'
-    },
-    { 
-      year: 'Present', 
-      title: 'Continuing Service',
-      description: 'Continues to serve as "Our George Achen" - beloved spiritual father of the community'
-    }
-  ];
+  milestones: any[] = [];
 
   constructor(public translationService: TranslationService) {}
 
@@ -84,6 +53,13 @@ export class VicarComponent implements OnInit {
       this.showContent = true;
     }, 100);
     this.selectedLanguage = this.translationService.getLanguage();
+    this.updateMilestones();
+    
+    // Subscribe to language changes
+    this.translationService.language$.subscribe(lang => {
+      this.selectedLanguage = lang;
+      this.updateMilestones();
+    });
     
     // Auto-rotate images
     setInterval(() => {
@@ -113,5 +89,69 @@ export class VicarComponent implements OnInit {
 
   setActiveTab(tab: 'story' | 'journey') {
     this.activeTab = tab;
+  }
+
+  updateMilestones() {
+    this.milestones = [
+      { 
+        year: this.translate('vicar.milestones.first.year'), 
+        title: this.translate('vicar.milestones.first.title'),
+        description: this.translate('vicar.milestones.first.description')
+      },
+      { 
+        year: this.translate('vicar.milestones.second.year'), 
+        title: this.translate('vicar.milestones.second.title'),
+        description: this.translate('vicar.milestones.second.description')
+      },
+      { 
+        year: this.translate('vicar.milestones.third.year'), 
+        title: this.translate('vicar.milestones.third.title'),
+        description: this.translate('vicar.milestones.third.description')
+      },
+      { 
+        year: this.translate('vicar.milestones.fourth.year'), 
+        title: this.translate('vicar.milestones.fourth.title'),
+        description: this.translate('vicar.milestones.fourth.description')
+      },
+      { 
+        year: this.translate('vicar.milestones.fifth.year'), 
+        title: this.translate('vicar.milestones.fifth.title'),
+        description: this.translate('vicar.milestones.fifth.description')
+      },
+      { 
+        year: this.translate('vicar.milestones.sixth.year'), 
+        title: this.translate('vicar.milestones.sixth.title'),
+        description: this.translate('vicar.milestones.sixth.description')
+      }
+    ];
+  }
+
+  translate(key: string): string {
+    return this.translationService.translate(key);
+  }
+
+  // Dynamic text sizing methods based on language
+  getHeadingClass(size: 'xl' | 'lg' | 'md' | 'sm' = 'lg'): string {
+    const sizeMap = {
+      xl: this.selectedLanguage === 'ml' ? 'text-2xl md:text-3xl' : 'text-3xl md:text-4xl',
+      lg: this.selectedLanguage === 'ml' ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl',
+      md: this.selectedLanguage === 'ml' ? 'text-lg md:text-xl' : 'text-xl md:text-2xl',
+      sm: this.selectedLanguage === 'ml' ? 'text-base md:text-lg' : 'text-lg md:text-xl'
+    };
+    return sizeMap[size];
+  }
+
+  getTextClass(size: 'lg' | 'base' | 'sm' | 'xs' = 'base'): string {
+    const sizeMap = {
+      lg: this.selectedLanguage === 'ml' ? 'text-base' : 'text-lg',
+      base: this.selectedLanguage === 'ml' ? 'text-sm' : 'text-base',
+      sm: this.selectedLanguage === 'ml' ? 'text-xs' : 'text-sm',
+      xs: this.selectedLanguage === 'ml' ? 'text-[10px]' : 'text-xs'
+    };
+    return sizeMap[size];
+  }
+
+  getButtonClass(): string {
+    return this.selectedLanguage === 'ml' ? 'text-sm py-2 px-3' : 'text-base py-3 px-4';
   }
 }

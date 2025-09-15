@@ -18,28 +18,7 @@ export class AboutComponent implements OnInit {
   timeline: any[] = [];
   altars: any[] = [];
 
-  values = [
-    {
-      title: 'Faith & Worship',
-      description: 'Rooted in the ancient Syrian Orthodox tradition, we celebrate the divine liturgy with reverence and joy',
-      icon: '🙏'
-    },
-    {
-      title: 'Community & Fellowship',
-      description: 'Building strong bonds through shared faith, cultural heritage, and mutual support',
-      icon: '🤝'
-    },
-    {
-      title: 'Service & Charity',
-      description: 'Serving those in need through outreach programs, charitable initiatives, and community service',
-      icon: '💝'
-    },
-    {
-      title: 'Culture & Heritage',
-      description: 'Preserving and celebrating our rich Malayalam cultural traditions for future generations',
-      icon: '🎭'
-    }
-  ];
+  values: any[] = [];
 
   constructor(public translationService: TranslationService) {}
 
@@ -50,12 +29,14 @@ export class AboutComponent implements OnInit {
     this.selectedLanguage = this.translationService.getLanguage();
     this.updateTimeline();
     this.updateAltars();
+    this.updateValues();
     
     // Subscribe to language changes
     this.translationService.language$.subscribe(lang => {
       this.selectedLanguage = lang;
       this.updateTimeline();
       this.updateAltars();
+      this.updateValues();
     });
   }
 
@@ -79,6 +60,31 @@ export class AboutComponent implements OnInit {
     ];
   }
 
+  updateValues() {
+    this.values = [
+      {
+        title: this.translate('about.coreValues.faithWorship.title'),
+        description: this.translate('about.coreValues.faithWorship.description'),
+        icon: '🙏'
+      },
+      {
+        title: this.translate('about.coreValues.communityFellowship.title'),
+        description: this.translate('about.coreValues.communityFellowship.description'),
+        icon: '🤝'
+      },
+      {
+        title: this.translate('about.coreValues.serviceCharity.title'),
+        description: this.translate('about.coreValues.serviceCharity.description'),
+        icon: '💝'
+      },
+      {
+        title: this.translate('about.coreValues.cultureHeritage.title'),
+        description: this.translate('about.coreValues.cultureHeritage.description'),
+        icon: '🎭'
+      }
+    ];
+  }
+
   @HostListener('window:scroll', ['$event'])
   onScroll() {
     this.scrollY = window.scrollY;
@@ -94,5 +100,30 @@ export class AboutComponent implements OnInit {
 
   translate(key: string): string {
     return this.translationService.translate(key);
+  }
+
+  // Dynamic text sizing methods based on language
+  getHeadingClass(size: 'xl' | 'lg' | 'md' | 'sm' = 'lg'): string {
+    const sizeMap = {
+      xl: this.selectedLanguage === 'ml' ? 'text-2xl md:text-3xl' : 'text-3xl md:text-4xl',
+      lg: this.selectedLanguage === 'ml' ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl',
+      md: this.selectedLanguage === 'ml' ? 'text-lg md:text-xl' : 'text-xl md:text-2xl',
+      sm: this.selectedLanguage === 'ml' ? 'text-base md:text-lg' : 'text-lg md:text-xl'
+    };
+    return sizeMap[size];
+  }
+
+  getTextClass(size: 'lg' | 'base' | 'sm' | 'xs' = 'base'): string {
+    const sizeMap = {
+      lg: this.selectedLanguage === 'ml' ? 'text-base' : 'text-lg',
+      base: this.selectedLanguage === 'ml' ? 'text-sm' : 'text-base',
+      sm: this.selectedLanguage === 'ml' ? 'text-xs' : 'text-sm',
+      xs: this.selectedLanguage === 'ml' ? 'text-[10px]' : 'text-xs'
+    };
+    return sizeMap[size];
+  }
+
+  getButtonClass(): string {
+    return this.selectedLanguage === 'ml' ? 'text-sm py-2 px-3' : 'text-base py-3 px-4';
   }
 }

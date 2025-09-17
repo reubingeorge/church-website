@@ -6,7 +6,9 @@ const compression = require('compression');
 const session = require('express-session');
 const passport = require('passport');
 const morgan = require('morgan');
-require('dotenv').config();
+const path = require('path');
+// Load .env from parent directory
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -53,10 +55,14 @@ app.get('/', (req, res) => {
   res.json({ message: 'Church Website API is running!' });
 });
 
-// API routes (to be implemented)
+// API routes
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
+
+// Contact route
+const contactRoute = require('./routes/contact');
+app.use('/api/contact', contactRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -397,23 +397,23 @@ export class TranslationService {
     contact: {
       heroQuote: { en: 'Connect with our community', ml: 'നമ്മുടെ സമൂഹവുമായി ബന്ധപ്പെടുക' },
       mainHeader: { en: 'Get in Touch', ml: 'ബന്ധപ്പെടുക' },
-      subHeader: { en: 'We would love to hear from you and welcome you to our parish family', ml: 'നിങ്ങളിൽ നിന്ന് കേൾക്കാനും നമ്മുടെ ഇടവക കുടുംബത്തിലേക്ക് സ്വാഗതം ചെയ്യാനും ഞങ്ങൾ ആഗ്രഹിക്കുന്നു' },
+      subHeader: { 
+        en: 'We would love to hear from you and welcome you to our parish family', 
+        ml: 'നിങ്ങളിൽ നിന്ന് കേൾക്കാനും നമ്മുടെ ഇടവക കുടുംബത്തിലേക്ക് നിങ്ങളെ സ്വാഗതം ചെയ്യാനും ഞങ്ങൾ ആഗ്രഹിക്കുന്നു' },
       
       churchInfo: {
-        header: { en: 'Church Information', ml: 'പള്ളി വിവരങ്ങൾ' },
+        header: { en: 'Church Information', ml: 'പള്ളിയുടെ വിവരങ്ങൾ' },
         name: { en: 'Mar Gregorios Syrian Orthodox Church', ml: 'മാർ ഗ്രിഗോറിയോസ് സുറിയാനി ഓർത്തഡോക്സ് പള്ളി' },
-        address: { en: '1307 Barclay Ave, Tampa, FL 33610', ml: '1307 ബാർക്ലേ അവന്യൂ, ടാമ്പ, FL 33610' },
+        address: { en: '12001 N 58th St, Tampa, FL 33617, USA', ml: '12001 N 58th St, Tampa, FL 33617, USA' },
         phone: { en: 'Phone', ml: 'ഫോൺ' },
         email: { en: 'Email', ml: 'ഇമെയിൽ' },
         website: { en: 'Website', ml: 'വെബ്സൈറ്റ്' }
       },
       
       serviceSchedule: {
-        header: { en: 'Service Schedule', ml: 'ശുശ്രൂഷാ സമയക്രമം' },
+        header: { en: 'Service Schedule', ml: 'ശുശ്രൂഷ സമയക്രമം' },
         sunday: { en: 'Sunday', ml: 'ഞായറാഴ്ച' },
-        mondayToSaturday: { en: 'Monday - Saturday', ml: 'തിങ്കൾ - ശനി' },
         morningPrayer: { en: 'Morning Prayer', ml: 'പ്രഭാത പ്രാർത്ഥന' },
-        eveningPrayer: { en: 'Evening Prayer', ml: 'സായാഹ്ന പ്രാർത്ഥന' },
         holyQurbana: { en: 'Holy Qurbana', ml: 'വിശുദ്ധ കുർബാന' },
         sundaySchool: { en: 'Sunday School', ml: 'ഞായറാഴ്ച സ്കൂൾ' },
         specialServices: { en: 'Special services and feast days are announced in advance', ml: 'പ്രത്യേക ശുശ്രൂഷകളും തിരുനാളുകളും മുൻകൂട്ടി അറിയിക്കുന്നു' }
@@ -450,17 +450,7 @@ export class TranslationService {
         success: { en: 'Message sent successfully!', ml: 'സന്ദേശം വിജയകരമായി അയച്ചു!' },
         error: { en: 'Failed to send message. Please try again.', ml: 'സന്ദേശം അയയ്ക്കുന്നതിൽ പരാജയപ്പെട്ടു. വീണ്ടും ശ്രമിക്കുക.' }
       },
-      
-      directions: {
-        header: { en: 'Get Directions', ml: 'വഴി നിർദ്ദേശങ്ങൾ' },
-        fromNorth: { en: 'From North Tampa', ml: 'വടക്കൻ ടാമ്പയിൽ നിന്ന്' },
-        fromSouth: { en: 'From South Tampa', ml: 'തെക്കൻ ടാമ്പയിൽ നിന്ന്' },
-        fromEast: { en: 'From East Tampa', ml: 'കിഴക്കൻ ടാമ്പയിൽ നിന്ന്' },
-        fromWest: { en: 'From West Tampa', ml: 'പടിഞ്ഞാറൻ ടാമ്പയിൽ നിന്ന്' },
-        parking: { en: 'Parking Information', ml: 'പാർക്കിംഗ് വിവരങ്ങൾ' },
-        parkingDetails: { en: 'Ample parking available on church premises', ml: 'പള്ളി പരിസരത്ത് ധാരാളം പാർക്കിംഗ് സൗകര്യം ലഭ്യമാണ്' }
-      },
-      
+            
       socialMedia: {
         header: { en: 'Follow Us', ml: 'ഞങ്ങളെ പിന്തുടരുക' },
         facebook: { en: 'Facebook', ml: 'ഫേസ്ബുക്ക്' },
@@ -473,6 +463,27 @@ export class TranslationService {
         header: { en: 'Emergency Contact', ml: 'അടിയന്തര ബന്ധപ്പെടൽ' },
         description: { en: 'For pastoral emergencies, please call', ml: 'ആത്മീയ അടിയന്തരാവസ്ഥകൾക്ക് വിളിക്കുക' },
         available: { en: 'Available 24/7 for emergencies', ml: 'അടിയന്തരാവസ്ഥകൾക്ക് 24/7 ലഭ്യമാണ്' }
+      },
+      
+      officeBearers: {
+        header: { en: 'Office Bearers', ml: 'ഭാരവാഹികൾ' },
+        subHeader: { en: 'Our church leadership and committee members', ml: 'നമ്മുടെ പള്ളി നേതൃത്വവും കമ്മിറ്റി അംഗങ്ങളും' },
+        president: { en: 'President', ml: 'പ്രസിഡന്റ്' },
+        vicePresident: { en: 'Vice President', ml: 'വൈസ് പ്രസിഡന്റ്' },
+        secretary: { en: 'Secretary', ml: 'സെക്രട്ടറി' },
+        jointSecretary: { en: 'Joint Secretary', ml: 'ജോയിന്റ് സെക്രട്ടറി' },
+        treasurer: { en: 'Treasurer', ml: 'ട്രഷറർ' },
+        jointTreasurer: { en: 'Joint Treasurer', ml: 'ജോയിന്റ് ട്രഷറർ' },
+        committeeMember: { en: 'Committee Member', ml: 'കമ്മിറ്റി അംഗം' },
+      },
+      
+      directions: {
+        header: { en: 'Get Directions', ml: 'ദിശകൾ നേടുക' },
+        fromTampaAirport: { en: 'From Tampa Airport', ml: 'ടാമ്പ എയർപോർട്ടിൽ നിന്ന്' },
+        fromStPetersburg: { en: 'From St. Petersburg', ml: 'സെന്റ് പീറ്റേഴ്‌സ്ബർഗിൽ നിന്ന്' },
+        fromOrlando: { en: 'From Orlando', ml: 'ഒർലാൻഡോയിൽ നിന്ന്' },
+        parking: { en: 'Parking Information', ml: 'പാർക്കിംഗ് വിവരങ്ങൾ' },
+        parkingDetails: { en: 'Ample parking available on church premises', ml: 'പള്ളി പരിസരത്ത് ധാരാളം പാർക്കിംഗ് സൗകര്യം ലഭ്യമാണ്' }
       }
     },
     
